@@ -1,4 +1,7 @@
+import { PrismaClient } from "@prisma/client";
 import { NextResponse } from "next/server";
+
+const prisma = new PrismaClient();
 
 export async function POST(request: Request) {
   const body = await request.json();
@@ -12,14 +15,17 @@ export async function POST(request: Request) {
     );
   }
 
-  console.log("New contact message:", {
-    name,
-    email,
-    message,
+  const contactMessage = await prisma.contactMessage.create({
+    data: {
+      name,
+      email,
+      message,
+    },
   });
 
   return NextResponse.json({
     success: true,
-    message: "Message received successfully",
+    message: "Message saved successfully",
+    data: contactMessage,
   });
 }
