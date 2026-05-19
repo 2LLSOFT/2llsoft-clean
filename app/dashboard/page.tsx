@@ -1,7 +1,8 @@
 import { PrismaClient } from "@prisma/client";
 
-const prisma = new PrismaClient();
+export const dynamic = "force-dynamic";
 
+const prisma = new PrismaClient();
 export default async function DashboardPage() {
   const messages = await prisma.contactMessage.findMany({
     orderBy: {
