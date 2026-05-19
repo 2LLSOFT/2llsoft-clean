@@ -2,11 +2,12 @@
 
 import { motion } from "framer-motion";
 
+const badges = ["Next.js", "Cloud", "AI", "Mobile", "Backend"];
+
 export default function Hero() {
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 pt-24 text-white">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#2563eb66,transparent_35%),radial-gradient(circle_at_bottom_right,#06b6d455,transparent_30%)]" />
-
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:80px_80px]" />
 
       <motion.div
@@ -44,6 +45,17 @@ export default function Hero() {
           >
             Explore Services
           </a>
+        </div>
+
+        <div className="mt-12 flex flex-wrap justify-center gap-3">
+          {badges.map((badge) => (
+            <span
+              key={badge}
+              className="rounded-full border border-white/10 bg-black/30 px-5 py-2 text-sm text-zinc-300 backdrop-blur-xl"
+            >
+              {badge}
+            </span>
+          ))}
         </div>
       </motion.div>
     </section>
