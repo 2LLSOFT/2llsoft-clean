@@ -53,3 +53,21 @@ section {
   background: #22d3ee;
   color: #000;
 }
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #030303;
+  overflow-x: hidden;
+}
+
+section {
+  position: relative;
+  z-index: 10;
+}
+
+::selection {
+  background: #22d3ee;
+  color: #000;
+}
