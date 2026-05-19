@@ -10,22 +10,11 @@ const stats = [
 ];
 
 const navItems = [
-  {
-    name: "Overview",
-    href: "/dashboard",
-  },
-  {
-    name: "Messages",
-    href: "/dashboard/messages",
-  },
-  {
-    name: "Projects",
-    href: "/dashboard/projects",
-  },
-  {
-    name: "Settings",
-    href: "/dashboard/settings",
-  },
+  { name: "Overview", href: "/dashboard" },
+  { name: "Messages", href: "/dashboard/messages" },
+  { name: "Projects", href: "/dashboard/projects" },
+  { name: "Analytics", href: "/dashboard/analytics" },
+  { name: "Settings", href: "/dashboard/settings" },
 ];
 
 export default function DashboardPage() {
@@ -40,7 +29,7 @@ export default function DashboardPage() {
 
   return (
     <main className="flex min-h-screen bg-[#030303] text-white">
-      <aside className="hidden w-[280px] border-r border-white/10 bg-black/40 p-8 md:block">
+      <aside className="w-[90px] border-r border-white/10 bg-black/40 p-4 md:w-[280px] md:p-8"
         <h1 className="text-2xl font-black tracking-[0.3em]">
           2LLSOFT
         </h1>
@@ -48,7 +37,9 @@ export default function DashboardPage() {
         <div className="mt-14 space-y-3">
           {navItems.map((item, index) => (
             <Link
-              key={item.name}
+              <span className="hidden md:inline">
+  {item.name}
+</span>
               href={item.href}
               className={
                 index === 0
@@ -74,7 +65,13 @@ export default function DashboardPage() {
             </h1>
 
             <p className="mt-4 text-zinc-400">
-              2LLSOFT management console.
+              <span className="hidden md:inline">
+  2LLSOFT
+</span>
+
+<span className="md:hidden">
+  2L
+</span>
             </p>
           </div>
 
