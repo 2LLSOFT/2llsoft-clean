@@ -13,8 +13,16 @@ export default function Contact() {
     const form = event.currentTarget;
 
     await fetch("/api/contact", {
-      method: "POST",
-    });
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    name: new FormData(form).get("name"),
+    email: new FormData(form).get("email"),
+    message: new FormData(form).get("message"),
+  }),
+});
 
     setStatus("Message sent successfully.");
     form.reset();
