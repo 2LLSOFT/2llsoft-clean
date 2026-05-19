@@ -15,7 +15,7 @@ export default function Navbar() {
 
         <a
           href="/login"
-          className="rounded-full bg-white px-5 py-3 text-sm font-bold text-black transition hover:scale-105"
+         className="rounded-full bg-white px-5 py-3 text-sm font-bold text-black transition duration-300 hover:scale-105 hover:bg-cyan-300"
         >
           Admin
         </a>

@@ -34,7 +34,7 @@ export default function Hero() {
         <div className="mt-10 flex flex-col justify-center gap-4 md:flex-row">
           <a
             href="#contact"
-            className="rounded-full bg-white px-8 py-4 font-bold text-black transition hover:scale-105"
+           className="rounded-full bg-white px-8 py-4 font-bold text-black transition duration-300 hover:scale-105 hover:bg-cyan-300"
           >
             Start Project
           </a>

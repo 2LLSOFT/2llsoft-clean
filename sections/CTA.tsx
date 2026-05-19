@@ -17,7 +17,7 @@ export default function CTA() {
         <div className="mt-10 flex gap-4">
           <a
             href="#contact"
-            className="rounded-full bg-white px-8 py-4 font-bold text-black"
+            className="rounded-full bg-white px-8 py-4 font-bold text-black transition duration-300 hover:scale-105 hover:bg-cyan-300"
           >
             Start Project
           </a>
