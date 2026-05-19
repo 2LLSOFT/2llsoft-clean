@@ -4,6 +4,7 @@ export default function Footer() {
       <div className="flex flex-col justify-between gap-8 md:flex-row">
         <div>
           <h2 className="text-2xl font-black tracking-[0.3em]">2LLSOFT</h2>
+
           <p className="mt-4 max-w-md text-zinc-400">
             Modern software solutions for web, mobile, cloud and scalable
             digital products.
@@ -19,7 +20,7 @@ export default function Footer() {
       </div>
 
       <div className="mt-12 border-t border-white/10 pt-6 text-sm text-zinc-500">
-        © 2026 2LLSOFT. All rights reserved.
+        © 2026 2LLSOFT. Engineered for scalable digital products.
       </div>
     </footer>
   );
