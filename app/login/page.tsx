@@ -1,56 +1,64 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
-export default function DashboardPage() {
+export default function LoginPage() {
   const router = useRouter();
+  const [error, setError] = useState("");
 
-  function handleLogout() {
-    document.cookie =
-      "admin-auth=false; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
 
-    router.push("/login");
+    const form = new FormData(event.currentTarget);
+    const email = form.get("email");
+    const password = form.get("password");
+
+    if (email === "admin@2llsoft.com" && password === "123456") {
+      document.cookie = "admin-auth=true; path=/";
+      router.push("/dashboard");
+      return;
+    }
+
+    setError("Invalid email or password.");
   }
 
   return (
-    <main className="min-h-screen bg-[#030303] p-10 text-white">
-      <div className="mx-auto max-w-7xl">
-        <div className="mb-10 flex items-center justify-between">
-          <div>
-            <p className="text-sm uppercase tracking-[0.4em] text-cyan-400">
-              Dashboard
-            </p>
+    <main className="flex min-h-screen items-center justify-center bg-[#030303] px-6 text-white">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#2563eb55,transparent_35%)]" />
 
-            <h1 className="mt-3 text-5xl font-black">
-              Admin Panel
-            </h1>
-          </div>
+      <form
+        onSubmit={handleSubmit}
+        className="relative z-10 w-full max-w-md rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 backdrop-blur-xl"
+      >
+        <p className="text-xs uppercase tracking-[0.5em] text-cyan-400">
+          2LLSOFT
+        </p>
 
-          <button
-            onClick={handleLogout}
-            className="rounded-full bg-white px-6 py-3 font-bold text-black"
-          >
-            Logout
+        <h1 className="mt-4 text-4xl font-black">Admin Login</h1>
+
+        <div className="mt-8 space-y-4">
+          <input
+            name="email"
+            type="email"
+            placeholder="Email address"
+            className="w-full rounded-2xl border border-white/10 bg-black/40 px-5 py-4 outline-none"
+          />
+
+          <input
+            name="password"
+            type="password"
+            placeholder="Password"
+            className="w-full rounded-2xl border border-white/10 bg-black/40 px-5 py-4 outline-none"
+          />
+
+          <button className="w-full rounded-full bg-white px-8 py-4 font-bold text-black">
+            Sign In
           </button>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
-          <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8">
-            <h2 className="text-zinc-400">Projects</h2>
-            <p className="mt-4 text-5xl font-black">12</p>
-          </div>
-
-          <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8">
-            <h2 className="text-zinc-400">Messages</h2>
-            <p className="mt-4 text-5xl font-black">28</p>
-          </div>
-
-          <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8">
-            <h2 className="text-zinc-400">Users</h2>
-            <p className="mt-4 text-5xl font-black">134</p>
-          </div>
-        </div>
-      </div>
+        {error && <p className="mt-5 text-sm text-red-400">{error}</p>}
+      </form>
     </main>
   );
 }
