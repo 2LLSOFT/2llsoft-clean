@@ -9,6 +9,7 @@ import Projects from "@/sections/Projects";
 import About from "@/sections/About";
 import Stats from "@/sections/Stats";
 import Numbers from "@/sections/Numbers";
+import WhyUs from "@/sections/WhyUs";
 import Process from "@/sections/Process";
 import Team from "@/sections/Team";
 import Blog from "@/sections/Blog";
@@ -43,6 +44,8 @@ export default function Home() {
       <Stats />
 
       <Numbers />
+
+      <WhyUs />
 
       <Process />
 
