@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Hero from "@/sections/Hero";
 import Marquee from "@/sections/Marquee";
 import Services from "@/sections/Services";
+import Features from "@/sections/Features";
 import Projects from "@/sections/Projects";
 import About from "@/sections/About";
 import Stats from "@/sections/Stats";
@@ -32,6 +33,8 @@ export default function Home() {
       <Marquee />
 
       <Services />
+
+      <Features />
 
       <Projects />
 
