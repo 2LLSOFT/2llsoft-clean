@@ -32,7 +32,7 @@ export default function Services() {
         {services.map((service, index) => (
           <div
             key={service.title}
-            className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 transition hover:-translate-y-2 hover:bg-white/[0.08]"
+            className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 transition duration-300 hover:-translate-y-2 hover:border-cyan-400/40 hover:bg-cyan-400/10"
           >
             <div className="mb-8 text-sm text-cyan-400">
               0{index + 1}
