@@ -1,4 +1,17 @@
+"use client";
+
+import { useRouter } from "next/navigation";
+
 export default function DashboardPage() {
+  const router = useRouter();
+
+  function handleLogout() {
+    document.cookie =
+      "admin-auth=false; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+
+    router.push("/login");
+  }
+
   return (
     <main className="min-h-screen bg-[#030303] p-10 text-white">
       <div className="mx-auto max-w-7xl">
@@ -13,8 +26,11 @@ export default function DashboardPage() {
             </h1>
           </div>
 
-          <button className="rounded-full bg-white px-6 py-3 font-bold text-black">
-            New Project
+          <button
+            onClick={handleLogout}
+            className="rounded-full bg-white px-6 py-3 font-bold text-black"
+          >
+            Logout
           </button>
         </div>
 
@@ -32,26 +48,6 @@ export default function DashboardPage() {
           <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8">
             <h2 className="text-zinc-400">Users</h2>
             <p className="mt-4 text-5xl font-black">134</p>
-          </div>
-        </div>
-
-        <div className="mt-10 rounded-[2rem] border border-white/10 bg-white/[0.04] p-8">
-          <h2 className="text-3xl font-black">
-            Recent Activity
-          </h2>
-
-          <div className="mt-8 space-y-4">
-            <div className="rounded-2xl border border-white/10 bg-black/20 p-5">
-              New contact form submitted
-            </div>
-
-            <div className="rounded-2xl border border-white/10 bg-black/20 p-5">
-              New project request created
-            </div>
-
-            <div className="rounded-2xl border border-white/10 bg-black/20 p-5">
-              Analytics updated
-            </div>
           </div>
         </div>
       </div>
