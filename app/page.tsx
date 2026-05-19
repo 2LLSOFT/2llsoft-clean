@@ -24,47 +24,27 @@ export default function Home() {
   return (
     <main className="relative overflow-hidden bg-[#030303]">
       <div className="pointer-events-none absolute left-[-200px] top-[-200px] h-[500px] w-[500px] rounded-full bg-cyan-500/10 blur-[120px]" />
-
       <div className="pointer-events-none absolute bottom-[-200px] right-[-200px] h-[500px] w-[500px] rounded-full bg-blue-700/10 blur-[120px]" />
 
       <Navbar />
-
       <Hero />
-
       <Marquee />
-
       <Services />
-
       <Features />
-
       <Projects />
-
       <About />
-
       <Stats />
-
       <Numbers />
-
       <WhyUs />
-
       <Process />
-
       <Team />
-
       <Blog />
-
       <Testimonials />
-
       <Technologies />
-
       <Pricing />
-
       <CTA />
-
       <FAQ />
-
       <Contact />
-
       <Footer />
     </main>
   );
