@@ -36,7 +36,7 @@ export default function Projects() {
         {projects.map((project) => (
           <div
             key={project.name}
-            className="group overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] transition hover:-translate-y-2"
+            className="group overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] transition duration-300 hover:-translate-y-2 hover:border-cyan-400/40 hover:bg-cyan-400/10"
           >
             <div className="h-[260px] bg-gradient-to-br from-cyan-500/20 to-blue-700/20 transition duration-500 group-hover:scale-105" />
 
@@ -54,7 +54,7 @@ export default function Projects() {
                 engineering workflow.
               </p>
 
-              <button className="mt-8 rounded-full border border-white/10 px-6 py-3 text-sm transition hover:bg-white hover:text-black">
+              <button className="mt-8 rounded-full border border-white/10 px-6 py-3 text-sm transition duration-300 hover:bg-white hover:text-black">
                 View Project
               </button>
             </div>
