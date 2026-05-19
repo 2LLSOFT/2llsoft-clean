@@ -1,43 +1,40 @@
 const services = [
   {
-    title: "Web Development",
-    text: "Modern, responsive and scalable websites built with clean architecture.",
+    title: "Web Platforms",
+    text: "High-performance company websites, SaaS platforms and product landing pages.",
   },
   {
-    title: "Mobile Applications",
-    text: "Cross-platform mobile applications optimized for performance and UX.",
+    title: "Mobile Apps",
+    text: "Modern mobile applications with clean user experience and scalable structure.",
   },
   {
-    title: "Backend Systems",
-    text: "Secure APIs, authentication systems and scalable infrastructure.",
+    title: "Backend APIs",
+    text: "Secure API systems, authentication flows and server-side business logic.",
   },
   {
-    title: "Cloud Infrastructure",
-    text: "Deployment, hosting and production-ready cloud environments.",
+    title: "Cloud Systems",
+    text: "Deployment, hosting, monitoring and production-ready infrastructure.",
   },
 ];
 
 export default function Services() {
   return (
-    <section
-      id="services"
-      className="px-6 py-24 text-white md:px-20"
-    >
+    <section id="services" className="bg-[#030303] px-6 py-24 text-white md:px-20">
       <p className="text-xs uppercase tracking-[0.5em] text-cyan-400">
         Services
       </p>
 
-      <h2 className="mt-4 text-4xl font-black md:text-6xl">
-        What we build
+      <h2 className="mt-4 max-w-4xl text-4xl font-black leading-tight md:text-6xl">
+        Software systems designed for real businesses.
       </h2>
 
       <div className="mt-14 grid gap-6 md:grid-cols-4">
         {services.map((service, index) => (
           <div
             key={service.title}
-            className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 backdrop-blur-xl transition hover:-translate-y-2 hover:bg-white/[0.08]"
+            className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 transition hover:-translate-y-2 hover:bg-white/[0.08]"
           >
-            <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-400/15 text-cyan-300">
+            <div className="mb-8 text-sm text-cyan-400">
               0{index + 1}
             </div>
 
@@ -45,7 +42,7 @@ export default function Services() {
               {service.title}
             </h3>
 
-            <p className="mt-4 text-zinc-400">
+            <p className="mt-4 leading-relaxed text-zinc-400">
               {service.text}
             </p>
           </div>
