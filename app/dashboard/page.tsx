@@ -23,23 +23,18 @@ export default function DashboardPage() {
   function handleLogout() {
     document.cookie =
       "admin-auth=false; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-
     router.push("/login");
   }
 
   return (
     <main className="flex min-h-screen bg-[#030303] text-white">
-      <aside className="w-[90px] border-r border-white/10 bg-black/40 p-4 md:w-[280px] md:p-8"
-        <h1 className="text-2xl font-black tracking-[0.3em]">
-          2LLSOFT
-        </h1>
+      <aside className="hidden w-[280px] border-r border-white/10 bg-black/40 p-8 md:block">
+        <h1 className="text-2xl font-black tracking-[0.3em]">2LLSOFT</h1>
 
         <div className="mt-14 space-y-3">
           {navItems.map((item, index) => (
             <Link
-              <span className="hidden md:inline">
-  {item.name}
-</span>
+              key={item.name}
               href={item.href}
               className={
                 index === 0
@@ -59,20 +54,8 @@ export default function DashboardPage() {
             <p className="text-sm uppercase tracking-[0.4em] text-cyan-400">
               Dashboard
             </p>
-
-            <h1 className="mt-3 text-5xl font-black">
-              Admin Panel
-            </h1>
-
-            <p className="mt-4 text-zinc-400">
-              <span className="hidden md:inline">
-  2LLSOFT
-</span>
-
-<span className="md:hidden">
-  2L
-</span>
-            </p>
+            <h1 className="mt-3 text-5xl font-black">Admin Panel</h1>
+            <p className="mt-4 text-zinc-400">2LLSOFT management console.</p>
           </div>
 
           <button
@@ -89,31 +72,22 @@ export default function DashboardPage() {
               key={stat.label}
               className="rounded-3xl border border-white/10 bg-white/[0.04] p-8"
             >
-              <p className="text-zinc-400">
-                {stat.label}
-              </p>
-
-              <h2 className="mt-4 text-5xl font-black">
-                {stat.value}
-              </h2>
+              <p className="text-zinc-400">{stat.label}</p>
+              <h2 className="mt-4 text-5xl font-black">{stat.value}</h2>
             </div>
           ))}
         </div>
 
         <section className="mt-10 rounded-[2rem] border border-white/10 bg-white/[0.04] p-8">
-          <h2 className="text-3xl font-black">
-            System Status
-          </h2>
+          <h2 className="text-3xl font-black">System Status</h2>
 
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             <div className="rounded-2xl bg-black/30 p-5 text-zinc-300">
               Website: Online
             </div>
-
             <div className="rounded-2xl bg-black/30 p-5 text-zinc-300">
               Deployment: Active
             </div>
-
             <div className="rounded-2xl bg-black/30 p-5 text-zinc-300">
               Domain: Connected
             </div>
