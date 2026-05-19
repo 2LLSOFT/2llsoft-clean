@@ -1,15 +1,23 @@
 const faq = [
   {
     question: "How long does a project take?",
-    answer: "Most company websites are completed within 1–3 weeks depending on scope.",
+    answer:
+      "Most company websites are completed within 1–3 weeks depending on scope.",
   },
   {
     question: "Do you build SaaS platforms?",
-    answer: "Yes. 2LLSOFT develops scalable SaaS systems with dashboards and APIs.",
+    answer:
+      "Yes. 2LLSOFT develops scalable SaaS systems with dashboards and APIs.",
   },
   {
     question: "Can you manage hosting and deployment?",
-    answer: "Yes. We handle deployment, infrastructure and production optimization.",
+    answer:
+      "Yes. We handle deployment, infrastructure and production optimization.",
+  },
+  {
+    question: "Do you provide support after launch?",
+    answer:
+      "Yes. Maintenance, monitoring and future upgrades are available.",
   },
 ];
 
@@ -28,7 +36,7 @@ export default function FAQ() {
         {faq.map((item) => (
           <div
             key={item.question}
-            className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8"
+            className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 transition duration-300 hover:border-cyan-400/40 hover:bg-cyan-400/10"
           >
             <h3 className="text-2xl font-bold">
               {item.question}
