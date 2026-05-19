@@ -31,7 +31,7 @@ export default function Testimonials() {
         {testimonials.map((item) => (
           <div
             key={item.name}
-            className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8"
+            className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 transition duration-300 hover:-translate-y-2 hover:border-cyan-400/40 hover:bg-cyan-400/10"
           >
             <p className="leading-relaxed text-zinc-300">
               "{item.text}"
