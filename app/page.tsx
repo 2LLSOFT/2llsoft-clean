@@ -6,12 +6,13 @@ import Services from "@/sections/Services";
 import Projects from "@/sections/Projects";
 import About from "@/sections/About";
 import Stats from "@/sections/Stats";
+import Process from "@/sections/Process";
 import Testimonials from "@/sections/Testimonials";
 import Technologies from "@/sections/Technologies";
 import Pricing from "@/sections/Pricing";
 import CTA from "@/sections/CTA";
-import Contact from "@/sections/Contact";
 import FAQ from "@/sections/FAQ";
+import Contact from "@/sections/Contact";
 
 export default function Home() {
   return (
@@ -32,6 +33,8 @@ export default function Home() {
 
       <Stats />
 
+      <Process />
+
       <Testimonials />
 
       <Technologies />
@@ -39,7 +42,7 @@ export default function Home() {
       <Pricing />
 
       <CTA />
-      
+
       <FAQ />
 
       <Contact />
