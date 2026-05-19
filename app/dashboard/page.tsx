@@ -21,8 +21,7 @@ export default function DashboardPage() {
   const router = useRouter();
 
   function handleLogout() {
-    document.cookie =
-      "admin-auth=false; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+    document.cookie = "admin-auth=; path=/; max-age=0";
     router.push("/login");
   }
 
@@ -54,13 +53,17 @@ export default function DashboardPage() {
             <p className="text-sm uppercase tracking-[0.4em] text-cyan-400">
               Dashboard
             </p>
+
             <h1 className="mt-3 text-5xl font-black">Admin Panel</h1>
-            <p className="mt-4 text-zinc-400">2LLSOFT management console.</p>
+
+            <p className="mt-4 text-zinc-400">
+              2LLSOFT management console.
+            </p>
           </div>
 
           <button
             onClick={handleLogout}
-            className="rounded-full bg-white px-6 py-3 font-bold text-black"
+            className="rounded-full bg-white px-6 py-3 font-bold text-black transition hover:bg-cyan-300"
           >
             Logout
           </button>
@@ -77,22 +80,6 @@ export default function DashboardPage() {
             </div>
           ))}
         </div>
-
-        <section className="mt-10 rounded-[2rem] border border-white/10 bg-white/[0.04] p-8">
-          <h2 className="text-3xl font-black">System Status</h2>
-
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
-            <div className="rounded-2xl bg-black/30 p-5 text-zinc-300">
-              Website: Online
-            </div>
-            <div className="rounded-2xl bg-black/30 p-5 text-zinc-300">
-              Deployment: Active
-            </div>
-            <div className="rounded-2xl bg-black/30 p-5 text-zinc-300">
-              Domain: Connected
-            </div>
-          </div>
-        </section>
       </section>
     </main>
   );
