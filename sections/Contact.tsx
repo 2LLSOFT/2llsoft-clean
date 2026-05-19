@@ -13,28 +13,28 @@ export default function Contact() {
     const form = event.currentTarget;
 
     await fetch("/api/contact", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    name: new FormData(form).get("name"),
-    email: new FormData(form).get("email"),
-    message: new FormData(form).get("message"),
-  }),
-});
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: new FormData(form).get("name"),
+        email: new FormData(form).get("email"),
+        message: new FormData(form).get("message"),
+      }),
+    });
 
     setStatus("Message sent successfully.");
     form.reset();
   }
 
   return (
-    <section id="contact" className="px-6 py-24 md:px-20">
-      <form
-        onSubmit={handleSubmit}
-        className="rounded-[2rem] bg-white p-10 text-black md:p-16"
-      >
-        <p className="text-xs uppercase tracking-[0.5em] text-zinc-500">
+    <section
+      id="contact"
+      className="bg-[#030303] px-6 py-24 text-white md:px-20"
+    >
+      <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-10 backdrop-blur-2xl md:p-16">
+        <p className="text-xs uppercase tracking-[0.5em] text-cyan-400">
           Contact
         </p>
 
@@ -42,41 +42,50 @@ export default function Contact() {
           Let’s build something serious.
         </h2>
 
-        <p className="mt-6 max-w-2xl text-zinc-600">
+        <p className="mt-6 max-w-2xl text-zinc-400">
           Send your project idea. 2LLSOFT will turn it into production-ready
-          software.
+          software systems.
         </p>
 
-        <div className="mt-10 grid gap-4 md:grid-cols-2">
+        <form
+          onSubmit={handleSubmit}
+          className="mt-10 grid gap-4 md:grid-cols-2"
+        >
           <input
             required
             name="name"
-            className="rounded-2xl border border-zinc-200 px-5 py-4"
             placeholder="Your name"
+            className="rounded-2xl border border-white/10 bg-black/40 px-5 py-4 outline-none"
           />
 
           <input
             required
-            name="email"
             type="email"
-            className="rounded-2xl border border-zinc-200 px-5 py-4"
+            name="email"
             placeholder="Email address"
+            className="rounded-2xl border border-white/10 bg-black/40 px-5 py-4 outline-none"
           />
 
           <textarea
             required
             name="message"
-            className="min-h-36 rounded-2xl border border-zinc-200 px-5 py-4 md:col-span-2"
             placeholder="Project details"
+            className="min-h-[180px] rounded-2xl border border-white/10 bg-black/40 px-5 py-4 outline-none md:col-span-2"
           />
 
-          <button className="rounded-full bg-black px-8 py-4 font-bold text-white md:w-fit">
+          <button
+            className="rounded-full bg-white px-8 py-4 font-bold text-black transition duration-300 hover:scale-105 hover:bg-cyan-300 md:w-fit"
+          >
             Send Message
           </button>
-        </div>
+        </form>
 
-        {status && <p className="mt-6 text-sm text-zinc-600">{status}</p>}
-      </form>
+        {status && (
+          <p className="mt-6 text-sm text-cyan-400">
+            {status}
+          </p>
+        )}
+      </div>
     </section>
   );
 }
