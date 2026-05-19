@@ -34,17 +34,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default function DashboardLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>
-        {children}
-        <Analytics />
-      </body>
-    </html>
+    <main className="bg-[#030303] text-white">
+      {children}
+    </main>
   );
 }
