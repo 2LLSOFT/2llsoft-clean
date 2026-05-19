@@ -7,6 +7,7 @@ import Services from "@/sections/Services";
 import Projects from "@/sections/Projects";
 import About from "@/sections/About";
 import Stats from "@/sections/Stats";
+import Numbers from "@/sections/Numbers";
 import Process from "@/sections/Process";
 import Team from "@/sections/Team";
 import Blog from "@/sections/Blog";
@@ -37,6 +38,8 @@ export default function Home() {
       <About />
 
       <Stats />
+
+      <Numbers />
 
       <Process />
 
