@@ -11,6 +11,7 @@ import Technologies from "@/sections/Technologies";
 import Pricing from "@/sections/Pricing";
 import CTA from "@/sections/CTA";
 import Contact from "@/sections/Contact";
+import FAQ from "@/sections/FAQ";
 
 export default function Home() {
   return (
@@ -38,6 +39,8 @@ export default function Home() {
       <Pricing />
 
       <CTA />
+      
+      <FAQ />
 
       <Contact />
 
