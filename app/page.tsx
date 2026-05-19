@@ -9,6 +9,7 @@ import About from "@/sections/About";
 import Stats from "@/sections/Stats";
 import Process from "@/sections/Process";
 import Team from "@/sections/Team";
+import Blog from "@/sections/Blog";
 import Testimonials from "@/sections/Testimonials";
 import Technologies from "@/sections/Technologies";
 import Pricing from "@/sections/Pricing";
@@ -40,6 +41,8 @@ export default function Home() {
       <Process />
 
       <Team />
+
+      <Blog />
 
       <Testimonials />
 
