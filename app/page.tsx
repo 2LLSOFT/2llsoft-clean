@@ -1,7 +1,3 @@
-"use client";
-
-import { useEffect, useState } from "react";
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -14,55 +10,25 @@ import Pricing from "@/sections/Pricing";
 import Contact from "@/sections/Contact";
 
 export default function Home() {
-  const [position, setPosition] = useState({
-    x: 0,
-    y: 0,
-  });
-
-  useEffect(() => {
-    const updateMouse = (e: MouseEvent) => {
-      setPosition({
-        x: e.clientX,
-        y: e.clientY,
-      });
-    };
-
-    window.addEventListener("mousemove", updateMouse);
-
-    return () => {
-      window.removeEventListener("mousemove", updateMouse);
-    };
-  }, []);
-
   return (
-    <main className="relative overflow-hidden bg-[#030303]">
-      <div
-        className="pointer-events-none fixed z-0 h-[500px] w-[500px] rounded-full bg-cyan-500/10 blur-[120px]"
-        style={{
-          left: position.x - 250,
-          top: position.y - 250,
-        }}
-      />
+    <main className="bg-[#030303]">
+      <Navbar />
 
-      <div className="relative z-10">
-        <Navbar />
+      <Hero />
 
-        <Hero />
+      <Services />
 
-        <Services />
+      <Projects />
 
-        <Projects />
+      <About />
 
-        <About />
+      <Technologies />
 
-        <Technologies />
+      <Pricing />
 
-        <Pricing />
+      <Contact />
 
-        <Contact />
-
-        <Footer />
-      </div>
+      <Footer />
     </main>
   );
 }
