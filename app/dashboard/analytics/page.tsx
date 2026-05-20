@@ -1,25 +1,47 @@
-import Link from "next/link";
+"use client";
 
-const analytics = [
-  {
-    label: "Visitors",
-    value: "12.4K",
-  },
-  {
-    label: "Page Views",
-    value: "48K",
-  },
-  {
-    label: "Conversion Rate",
-    value: "4.8%",
-  },
-  {
-    label: "Bounce Rate",
-    value: "21%",
-  },
-];
+import Link from "next/link";
+import { useEffect, useState } from "react";
+
+type Analytics = {
+  revenue: number;
+  visitors: number;
+  conversions: number;
+  growth: number;
+};
 
 export default function AnalyticsPage() {
+  const [analytics, setAnalytics] = useState<Analytics | null>(null);
+
+  async function loadAnalytics() {
+    const response = await fetch("/api/analytics");
+    const data = await response.json();
+    setAnalytics(data);
+  }
+
+  useEffect(() => {
+    loadAnalytics();
+  }, []);
+
+  const stats = [
+    {
+      label: "Revenue",
+      value: analytics ? `€${analytics.revenue.toLocaleString()}` : "...",
+    },
+    {
+      label: "Visitors",
+      value: analytics ? analytics.visitors.toLocaleString() : "...",
+    },
+    {
+      label: "Conversions",
+      value: analytics ? analytics.conversions.toLocaleString() : "...",
+    },
+    {
+      label: "Growth",
+      value: analytics ? `%${analytics.growth}` : "...",
+    },
+  ];
+
   return (
     <main className="flex min-h-screen bg-[#030303] text-white">
       <aside className="hidden w-[280px] border-r border-white/10 bg-black/40 p-8 md:block">
@@ -38,6 +60,14 @@ export default function AnalyticsPage() {
 
           <Link href="/dashboard/projects" className="block rounded-2xl border border-white/10 px-5 py-4 text-zinc-400">
             Projects
+          </Link>
+
+          <Link href="/dashboard/tasks" className="block rounded-2xl border border-white/10 px-5 py-4 text-zinc-400">
+            Tasks
+          </Link>
+
+          <Link href="/dashboard/clients" className="block rounded-2xl border border-white/10 px-5 py-4 text-zinc-400">
+            Clients
           </Link>
 
           <Link href="/dashboard/analytics" className="block rounded-2xl bg-white px-5 py-4 font-bold text-black">
@@ -60,7 +90,7 @@ export default function AnalyticsPage() {
         </h1>
 
         <div className="mt-10 grid gap-6 md:grid-cols-4">
-          {analytics.map((item) => (
+          {stats.map((item) => (
             <div
               key={item.label}
               className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8"
@@ -69,7 +99,7 @@ export default function AnalyticsPage() {
                 {item.label}
               </p>
 
-              <h2 className="mt-4 text-5xl font-black text-cyan-400">
+              <h2 className="mt-4 text-4xl font-black text-cyan-400">
                 {item.value}
               </h2>
             </div>
@@ -81,7 +111,17 @@ export default function AnalyticsPage() {
             Traffic Overview
           </h2>
 
-          <div className="mt-10 h-[300px] rounded-[2rem] bg-gradient-to-br from-cyan-500/10 to-blue-700/10" />
+          <div className="mt-10 grid h-[300px] grid-cols-12 items-end gap-3">
+            {[35, 55, 48, 70, 62, 85, 76, 90, 68, 80, 92, 100].map(
+              (height, index) => (
+                <div
+                  key={index}
+                  className="rounded-t-2xl bg-cyan-400/40"
+                  style={{ height: `${height}%` }}
+                />
+              )
+            )}
+          </div>
         </div>
       </section>
     </main>
