@@ -72,9 +72,9 @@ export default function Contact() {
 
           <div className="mt-10 space-y-5 text-zinc-300">
             <p>Email: info@2llsoft.com</p>
-            <p>Phone: +48 000 000 000</p>
-            <p>WhatsApp: +48 000 000 000</p>
-            <p>Location: Gdynia, Poland</p>
+            <p>Phone: +48 507 275 668 </p>
+            <p>WhatsApp: +48 507 275 668 </p>
+            <p>Location: Słupsk, Poland</p>
             <p>Working Hours: Monday - Friday / 09:00 - 18:00</p>
           </div>
         </div>
