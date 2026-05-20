@@ -12,3 +12,17 @@ export async function GET() {
 
   return NextResponse.json(messages);
 }
+
+export async function DELETE(request: Request) {
+  const body = await request.json();
+
+  await prisma.contactMessage.delete({
+    where: {
+      id: body.id,
+    },
+  });
+
+  return NextResponse.json({
+    success: true,
+  });
+}
