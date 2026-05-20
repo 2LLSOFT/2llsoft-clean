@@ -21,13 +21,16 @@ import Pricing from "@/sections/Pricing";
 import CTA from "@/sections/CTA";
 import FAQ from "@/sections/FAQ";
 import Contact from "@/sections/Contact";
+import SpaceBackground from "@/components/SpaceBackground";
 
 export default function Home() {
   return (
     <main className="relative overflow-hidden bg-[#030303]">
+      
       <div className="pointer-events-none absolute left-[-200px] top-[-200px] h-[500px] w-[500px] rounded-full bg-cyan-500/10 blur-[120px]" />
       <div className="pointer-events-none absolute bottom-[-200px] right-[-200px] h-[500px] w-[500px] rounded-full bg-blue-700/10 blur-[120px]" />
 
+      <SpaceBackground />
       <Navbar />
       <Hero />
       <Marquee />
