@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useLanguage } from "@/lib/language-store";
 import MagneticButton from "@/components/MagneticButton";
+import { useLanguage } from "@/lib/language-store";
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -10,14 +10,6 @@ export default function Hero() {
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden bg-black px-6 text-white md:px-20">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#0ea5e933,transparent_30%)]" />
-
-      <div className="absolute inset-0 opacity-40">
-        <div className="absolute left-[10%] top-[20%] h-1 w-1 rounded-full bg-white" />
-        <div className="absolute left-[20%] top-[40%] h-1 w-1 rounded-full bg-white" />
-        <div className="absolute left-[80%] top-[30%] h-1 w-1 rounded-full bg-white" />
-        <div className="absolute left-[70%] top-[60%] h-1 w-1 rounded-full bg-white" />
-        <div className="absolute left-[50%] top-[10%] h-1 w-1 rounded-full bg-white" />
-      </div>
 
       <motion.div
         initial={{ y: 700, scale: 0.8 }}
@@ -30,12 +22,6 @@ export default function Hero() {
             animate={{ scale: [1, 1.6, 2], opacity: [0.7, 0.4, 0] }}
             transition={{ duration: 1.4, repeat: Infinity }}
             className="absolute left-1/2 top-[320px] h-[260px] w-[260px] -translate-x-1/2 rounded-full bg-white/20 blur-[80px]"
-          />
-
-          <motion.div
-            animate={{ scale: [1, 1.8], opacity: [0.5, 0] }}
-            transition={{ duration: 1.2, repeat: Infinity, delay: 0.3 }}
-            className="absolute left-1/2 top-[340px] h-[220px] w-[220px] -translate-x-1/2 rounded-full bg-cyan-400/20 blur-[70px]"
           />
 
           <motion.div
@@ -87,20 +73,19 @@ export default function Hero() {
           transition={{ duration: 1.8 }}
           className="mt-12 flex flex-col gap-5 md:flex-row"
         >
-         <MagneticButton
-  href="#projects"
-  className="rounded-full bg-white px-8 py-5 text-center font-bold text-black transition duration-300 hover:scale-105 hover:bg-cyan-300"
->
-  {t.viewMission}
-</MagneticButton>
-          </a>
+          <MagneticButton
+            href="#projects"
+            className="rounded-full bg-white px-8 py-5 text-center font-bold text-black transition duration-300 hover:bg-cyan-300"
+          >
+            {t.viewMission}
+          </MagneticButton>
 
           <MagneticButton
-  href="#contact"
-  className="rounded-full border border-white/10 bg-white/[0.04] px-8 py-5 text-center font-bold transition duration-300 hover:border-cyan-400/40 hover:bg-cyan-400/10"
->
-  {t.startLaunch}
-</MagneticButton>
+            href="#contact"
+            className="rounded-full border border-white/10 bg-white/[0.04] px-8 py-5 text-center font-bold transition duration-300 hover:border-cyan-400/40 hover:bg-cyan-400/10"
+          >
+            {t.startLaunch}
+          </MagneticButton>
         </motion.div>
       </div>
     </section>
