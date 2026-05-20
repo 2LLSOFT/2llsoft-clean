@@ -6,6 +6,7 @@ import Marquee from "@/sections/Marquee";
 import Services from "@/sections/Services";
 import Features from "@/sections/Features";
 import Projects from "@/sections/Projects";
+import Trust from "@/sections/Trust";
 import About from "@/sections/About";
 import Stats from "@/sections/Stats";
 import Numbers from "@/sections/Numbers";
@@ -19,7 +20,6 @@ import Pricing from "@/sections/Pricing";
 import CTA from "@/sections/CTA";
 import FAQ from "@/sections/FAQ";
 import Contact from "@/sections/Contact";
-import Trust from "@/sections/Trust";
 
 export default function Home() {
   return (
