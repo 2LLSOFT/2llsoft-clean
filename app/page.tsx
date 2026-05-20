@@ -1,5 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FadeIn from "@/components/FadeIn";
+import SpaceBackground from "@/components/SpaceBackground";
 
 import Hero from "@/sections/Hero";
 import Marquee from "@/sections/Marquee";
@@ -13,43 +15,39 @@ import Stats from "@/sections/Stats";
 import Numbers from "@/sections/Numbers";
 import WhyUs from "@/sections/WhyUs";
 import Process from "@/sections/Process";
-import Team from "@/sections/Team";
-import Blog from "@/sections/Blog";
-import Testimonials from "@/sections/Testimonials";
 import Technologies from "@/sections/Technologies";
 import Pricing from "@/sections/Pricing";
 import CTA from "@/sections/CTA";
+import Testimonials from "@/sections/Testimonials";
 import FAQ from "@/sections/FAQ";
 import Contact from "@/sections/Contact";
-import SpaceBackground from "@/components/SpaceBackground";
 
 export default function Home() {
   return (
     <main className="relative overflow-hidden bg-[#030303]">
-      
-      <div className="pointer-events-none absolute left-[-200px] top-[-200px] h-[500px] w-[500px] rounded-full bg-cyan-500/10 blur-[120px]" />
-      <div className="pointer-events-none absolute bottom-[-200px] right-[-200px] h-[500px] w-[500px] rounded-full bg-blue-700/10 blur-[120px]" />
-
       <SpaceBackground />
+
       <Navbar />
       <Hero />
-      <Marquee />
-      <BrandShowcase />
-      <Services />
-      <Features />
-      <Projects />
-      <Trust />
-      <About />
-      <Stats />
-      <Numbers />
-      <WhyUs />
-      <Process />
-      <Technologies />
-      <Pricing />
-      <CTA />
-      <Testimonials />
-      <FAQ />
-      <Contact />
+
+      <FadeIn><Marquee /></FadeIn>
+      <FadeIn><BrandShowcase /></FadeIn>
+      <FadeIn><Services /></FadeIn>
+      <FadeIn><Features /></FadeIn>
+      <FadeIn><Projects /></FadeIn>
+      <FadeIn><Trust /></FadeIn>
+      <FadeIn><About /></FadeIn>
+      <FadeIn><Stats /></FadeIn>
+      <FadeIn><Numbers /></FadeIn>
+      <FadeIn><WhyUs /></FadeIn>
+      <FadeIn><Process /></FadeIn>
+      <FadeIn><Technologies /></FadeIn>
+      <FadeIn><Pricing /></FadeIn>
+      <FadeIn><CTA /></FadeIn>
+      <FadeIn><Testimonials /></FadeIn>
+      <FadeIn><FAQ /></FadeIn>
+      <FadeIn><Contact /></FadeIn>
+
       <Footer />
     </main>
   );
