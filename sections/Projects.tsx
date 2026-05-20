@@ -34,12 +34,37 @@ export default function Projects() {
       </h2>
 
       <div className="mt-16 grid gap-8 lg:grid-cols-3">
-        {projects.map((project) => (
+        {projects.map((project, index) => (
           <div
             key={project.name}
             className="group overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] transition duration-300 hover:-translate-y-2 hover:border-cyan-400/40 hover:bg-cyan-400/10"
           >
-            <div className="h-[280px] bg-gradient-to-br from-cyan-400/20 via-blue-700/10 to-black" />
+            <div className="relative h-[280px] overflow-hidden bg-[#050505] p-6">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#22d3ee33,transparent_45%)]" />
+
+              <div className="relative h-full rounded-[1.5rem] border border-white/10 bg-black/60 p-5 shadow-2xl">
+                <div className="flex gap-2">
+                  <span className="h-3 w-3 rounded-full bg-red-400" />
+                  <span className="h-3 w-3 rounded-full bg-yellow-400" />
+                  <span className="h-3 w-3 rounded-full bg-green-400" />
+                </div>
+
+                <div className="mt-8 grid gap-4">
+                  <div className="h-8 w-2/3 rounded-full bg-cyan-400/30" />
+                  <div className="h-24 rounded-2xl bg-white/10" />
+
+                  <div className="grid grid-cols-3 gap-3">
+                    <div className="h-16 rounded-2xl bg-cyan-400/20" />
+                    <div className="h-16 rounded-2xl bg-white/10" />
+                    <div className="h-16 rounded-2xl bg-blue-500/20" />
+                  </div>
+                </div>
+
+                <div className="absolute bottom-5 right-5 rounded-full bg-cyan-400 px-4 py-2 text-xs font-bold text-black">
+                  0{index + 1}
+                </div>
+              </div>
+            </div>
 
             <div className="p-8">
               <p className="text-sm text-cyan-400">{project.category}</p>
