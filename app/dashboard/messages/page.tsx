@@ -5,10 +5,8 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 export default async function MessagesPage() {
-  const messages = await prisma.message.findMany({
-    orderBy: {
-      createdAt: "desc",
-    },
+  const messages = await prisma.contactMessage.findMany({
+    orderBy: { createdAt: "desc" },
   });
 
   return (
@@ -44,10 +42,7 @@ export default async function MessagesPage() {
 
         <div className="mt-10 space-y-5">
           {messages.map((item) => (
-            <div
-              key={item.id}
-              className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8"
-            >
+            <div key={item.id} className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8">
               <h2 className="text-2xl font-black">{item.name}</h2>
               <p className="mt-2 text-cyan-400">{item.email}</p>
               <p className="mt-5 text-zinc-400">{item.message}</p>

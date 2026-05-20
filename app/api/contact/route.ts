@@ -7,7 +7,7 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
 
-    const savedMessage = await prisma.message.create({
+    const savedMessage = await prisma.contactMessage.create({
       data: {
         name: String(body.name),
         email: String(body.email),
@@ -15,10 +15,7 @@ export async function POST(request: Request) {
       },
     });
 
-    return NextResponse.json({
-      success: true,
-      data: savedMessage,
-    });
+    return NextResponse.json({ success: true, data: savedMessage });
   } catch {
     return NextResponse.json(
       { success: false, message: "Message could not be saved." },

@@ -7,7 +7,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Message {
+model ContactMessage {
   id        String   @id @default(cuid())
   name      String
   email     String
