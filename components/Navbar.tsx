@@ -1,16 +1,15 @@
-import Image from "next/image";
+
 
 export default function Navbar() {
   return (
     <header className="fixed top-0 z-[100] w-full border-b border-white/10 bg-black/20 backdrop-blur-2xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 text-white md:px-10">
         <a href="/" className="flex items-center gap-3">
-          <Image
-            src="/logo/mark.svg"
-            alt="2LLSOFT Logo"
-            width={36}
-            height={36}
-          />
+        <img
+  src="/logo/mark.svg"
+  alt="2LLSOFT Logo"
+  className="h-9 w-9 object-contain"
+/>
 
           <span className="text-xl font-black tracking-[0.3em] md:text-2xl">
             2LLSOFT

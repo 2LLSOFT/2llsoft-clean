@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 
 export default function BrandShowcase() {
   return (
@@ -20,12 +20,11 @@ export default function BrandShowcase() {
         </div>
 
         <div className="flex items-center justify-center rounded-[2rem] border border-white/10 bg-black/40 p-12">
-          <Image
-            src="/logo/mark.svg"
-            alt="2LLSOFT Brand Mark"
-            width={180}
-            height={180}
-          />
+     <img
+  src="/logo/mark.svg"
+  alt="2LLSOFT Brand Mark"
+  className="h-[180px] w-[180px] object-contain"
+/>
         </div>
       </div>
     </section>
