@@ -1,28 +1,36 @@
 const values = [
-  "Clean architecture",
-  "Performance-first development",
-  "Scalable systems",
-  "Production-ready delivery",
+  "Clean engineering architecture",
+  "Premium interface design",
+  "Scalable backend systems",
+  "Production-focused delivery",
 ];
 
 export default function About() {
   return (
     <section id="about" className="bg-[#030303] px-6 py-24 text-white md:px-20">
-      <div className="grid gap-12 md:grid-cols-2">
+      <div className="grid gap-12 lg:grid-cols-2">
         <div>
           <p className="text-xs uppercase tracking-[0.5em] text-cyan-400">
-            About
+            About 2LLSOFT
           </p>
 
-          <h2 className="mt-4 text-4xl font-black leading-tight md:text-6xl">
-            We build software with engineering discipline.
+          <h2 className="mt-4 text-4xl font-black leading-tight md:text-7xl">
+            A software company focused on premium digital systems.
           </h2>
         </div>
 
         <div>
-          <p className="text-lg leading-relaxed text-zinc-400 md:text-2xl">
-            2LLSOFT develops modern digital products for companies that need
-            reliable, scalable and maintainable software systems.
+          <p className="text-xl leading-9 text-zinc-400">
+            2LLSOFT is a modern software company based in Słupsk, Poland,
+            building scalable web platforms, mobile applications, dashboards,
+            backend systems and AI-powered digital products for ambitious
+            businesses.
+          </p>
+
+          <p className="mt-8 text-lg leading-8 text-zinc-500">
+            Every project is designed with clean architecture, strong visual
+            identity, production-ready infrastructure and long-term scalability
+            in mind.
           </p>
 
           <div className="mt-10 grid gap-4">
