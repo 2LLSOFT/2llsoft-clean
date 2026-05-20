@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 
+import PageLoader from "@/components/PageLoader";
+
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -29,19 +31,22 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "2LLSOFT | Modern Software Solutions",
-    description:
-      "Modern software solutions for scalable digital products.",
+    description: "Modern software solutions for scalable digital products.",
   },
 };
 
-export default function DashboardLayout({
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <main className="bg-[#030303] text-white">
-      {children}
-    </main>
+    <html lang="en">
+      <body>
+        <PageLoader />
+        {children}
+        <Analytics />
+      </body>
+    </html>
   );
 }
