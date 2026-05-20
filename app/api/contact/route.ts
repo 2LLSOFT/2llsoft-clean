@@ -1,26 +1,37 @@
-import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
-
-export const runtime = "nodejs";
+import { prisma } from "@/lib/prisma";
 
 export async function GET() {
-  const projects = await prisma.project.findMany({
-    orderBy: { createdAt: "desc" },
+  return NextResponse.json({
+    ok: true,
   });
-
-  return NextResponse.json(projects);
 }
 
-export async function POST(request: Request) {
-  const body = await request.json();
+export async function POST(req: Request) {
+  try {
+    const body = await req.json();
 
-  const project = await prisma.project.create({
-    data: {
-      name: body.name,
-      description: body.description || "No description",
-      status: body.status || "New",
-    },
-  });
+    const created = await prisma.contactMessage.create({
+      data: {
+        name: body.name || "Unknown",
+        email: body.email || "unknown@test.com",
+        message: body.message || "Empty",
+      },
+    });
 
-  return NextResponse.json(project);
+    return NextResponse.json({
+      success: true,
+      created,
+    });
+  } catch (err) {
+    return NextResponse.json(
+      {
+        success: false,
+        error: String(err),
+      },
+      {
+        status: 500,
+      }
+    );
+  }
 }
