@@ -41,12 +41,10 @@ export default function Home() {
       <Numbers />
       <WhyUs />
       <Process />
-      <Team />
-      <Blog />
-      <Testimonials />
       <Technologies />
       <Pricing />
       <CTA />
+      <Testimonials />
       <FAQ />
       <Contact />
       <Footer />
