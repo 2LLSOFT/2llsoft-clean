@@ -1,14 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useLanguage } from "@/lib/language-store";
 
 export default function Hero() {
+  const { t } = useLanguage();
+
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden bg-black px-6 text-white md:px-20">
-      {/* Space Background */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#0ea5e933,transparent_30%)]" />
 
-      {/* Stars */}
       <div className="absolute inset-0 opacity-40">
         <div className="absolute left-[10%] top-[20%] h-1 w-1 rounded-full bg-white" />
         <div className="absolute left-[20%] top-[40%] h-1 w-1 rounded-full bg-white" />
@@ -17,78 +18,40 @@ export default function Hero() {
         <div className="absolute left-[50%] top-[10%] h-1 w-1 rounded-full bg-white" />
       </div>
 
-      {/* Rocket */}
       <motion.div
-        initial={{
-          y: 700,
-          scale: 0.8,
-        }}
-        animate={{
-          y: -900,
-          scale: 1,
-        }}
-        transition={{
-          duration: 6,
-          ease: "easeInOut",
-        }}
+        initial={{ y: 700, scale: 0.8 }}
+        animate={{ y: -900, scale: 1 }}
+        transition={{ duration: 6, ease: "easeInOut" }}
         className="pointer-events-none absolute right-[10%] bottom-[-300px] z-30 hidden lg:block"
       >
         <div className="relative">
-          {/* Smoke */}
           <motion.div
-            animate={{
-              scale: [1, 1.6, 2],
-              opacity: [0.7, 0.4, 0],
-            }}
-            transition={{
-              duration: 1.4,
-              repeat: Infinity,
-            }}
+            animate={{ scale: [1, 1.6, 2], opacity: [0.7, 0.4, 0] }}
+            transition={{ duration: 1.4, repeat: Infinity }}
             className="absolute left-1/2 top-[320px] h-[260px] w-[260px] -translate-x-1/2 rounded-full bg-white/20 blur-[80px]"
           />
 
           <motion.div
-            animate={{
-              scale: [1, 1.8],
-              opacity: [0.5, 0],
-            }}
-            transition={{
-              duration: 1.2,
-              repeat: Infinity,
-              delay: 0.3,
-            }}
+            animate={{ scale: [1, 1.8], opacity: [0.5, 0] }}
+            transition={{ duration: 1.2, repeat: Infinity, delay: 0.3 }}
             className="absolute left-1/2 top-[340px] h-[220px] w-[220px] -translate-x-1/2 rounded-full bg-cyan-400/20 blur-[70px]"
           />
 
-          {/* Fire */}
           <motion.div
-            animate={{
-              height: [160, 260, 180],
-              opacity: [0.8, 1, 0.7],
-            }}
-            transition={{
-              duration: 0.18,
-              repeat: Infinity,
-            }}
+            animate={{ height: [160, 260, 180], opacity: [0.8, 1, 0.7] }}
+            transition={{ duration: 0.18, repeat: Infinity }}
             className="absolute left-1/2 top-[300px] w-20 -translate-x-1/2 rounded-b-full bg-gradient-to-b from-cyan-300 via-blue-500 to-transparent blur-md"
           />
 
-          {/* Rocket Body */}
           <div className="relative h-[380px] w-[140px]">
             <div className="absolute inset-x-0 top-0 h-[300px] rounded-t-full border border-white/20 bg-gradient-to-b from-white via-zinc-300 to-zinc-700 shadow-[0_0_80px_rgba(34,211,238,0.35)]" />
-
-            {/* Window */}
             <div className="absolute left-1/2 top-24 h-16 w-16 -translate-x-1/2 rounded-full border border-cyan-300 bg-cyan-400/20 shadow-[0_0_40px_rgba(34,211,238,0.8)]" />
-
-            {/* Wings */}
             <div className="absolute -left-12 bottom-10 h-36 w-20 skew-y-12 rounded-2xl bg-zinc-700" />
-
             <div className="absolute -right-12 bottom-10 h-36 w-20 -skew-y-12 rounded-2xl bg-zinc-700" />
           </div>
         </div>
       </motion.div>
 
-      {/* Content */}
       <div className="relative z-20 max-w-5xl">
         <motion.p
           initial={{ opacity: 0, y: 40 }}
@@ -96,7 +59,7 @@ export default function Hero() {
           transition={{ duration: 1 }}
           className="text-xs uppercase tracking-[0.5em] text-cyan-400"
         >
-          Mission Control / 2LLSOFT
+          {t.heroBadge}
         </motion.p>
 
         <motion.h1
@@ -105,7 +68,7 @@ export default function Hero() {
           transition={{ duration: 1.4 }}
           className="mt-8 text-6xl font-black leading-[0.9] tracking-[-0.06em] md:text-8xl"
         >
-          Launching digital systems beyond limits.
+          {t.heroTitle}
         </motion.h1>
 
         <motion.p
@@ -114,8 +77,7 @@ export default function Hero() {
           transition={{ duration: 1.6 }}
           className="mt-8 max-w-2xl text-lg leading-8 text-zinc-400"
         >
-          Premium software engineering for ambitious companies, startups and
-          modern digital platforms.
+          {t.heroText}
         </motion.p>
 
         <motion.div
@@ -128,14 +90,14 @@ export default function Hero() {
             href="#projects"
             className="rounded-full bg-white px-8 py-5 text-center font-bold text-black transition duration-300 hover:scale-105 hover:bg-cyan-300"
           >
-            View Mission
+            {t.viewMission}
           </a>
 
           <a
             href="#contact"
             className="rounded-full border border-white/10 bg-white/[0.04] px-8 py-5 text-center font-bold transition duration-300 hover:border-cyan-400/40 hover:bg-cyan-400/10"
           >
-            Start Launch
+            {t.startLaunch}
           </a>
         </motion.div>
       </div>
