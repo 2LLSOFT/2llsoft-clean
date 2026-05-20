@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/language-store";
+import MagneticButton from "@/components/MagneticButton";
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -86,19 +87,20 @@ export default function Hero() {
           transition={{ duration: 1.8 }}
           className="mt-12 flex flex-col gap-5 md:flex-row"
         >
-          <a
-            href="#projects"
-            className="rounded-full bg-white px-8 py-5 text-center font-bold text-black transition duration-300 hover:scale-105 hover:bg-cyan-300"
-          >
-            {t.viewMission}
+         <MagneticButton
+  href="#projects"
+  className="rounded-full bg-white px-8 py-5 text-center font-bold text-black transition duration-300 hover:scale-105 hover:bg-cyan-300"
+>
+  {t.viewMission}
+</MagneticButton>
           </a>
 
-          <a
-            href="#contact"
-            className="rounded-full border border-white/10 bg-white/[0.04] px-8 py-5 text-center font-bold transition duration-300 hover:border-cyan-400/40 hover:bg-cyan-400/10"
-          >
-            {t.startLaunch}
-          </a>
+          <MagneticButton
+  href="#contact"
+  className="rounded-full border border-white/10 bg-white/[0.04] px-8 py-5 text-center font-bold transition duration-300 hover:border-cyan-400/40 hover:bg-cyan-400/10"
+>
+  {t.startLaunch}
+</MagneticButton>
         </motion.div>
       </div>
     </section>
