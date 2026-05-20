@@ -55,3 +55,20 @@ html {
 body {
   background: #030303;
 }
+a,
+button {
+  cursor: pointer;
+}
+
+a:active,
+button:active {
+  transform: scale(0.97);
+}
+
+.glow-hover {
+  transition: all 0.3s ease;
+}
+
+.glow-hover:hover {
+  box-shadow: 0 0 40px rgba(34, 211, 238, 0.25);
+}
