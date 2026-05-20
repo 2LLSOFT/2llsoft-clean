@@ -1,17 +1,28 @@
+import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
 
-export async function POST(request: Request) {
-  const body = await request.json().catch(() => null);
+export const runtime = "nodejs";
 
-  if (!body) {
+export async function POST(request: Request) {
+  const body = await request.json();
+
+  if (!body.name || !body.email || !body.message) {
     return NextResponse.json(
-      { success: false, message: "Invalid request." },
+      { success: false, message: "Missing fields" },
       { status: 400 }
     );
   }
 
+  const savedMessage = await prisma.message.create({
+    data: {
+      name: body.name,
+      email: body.email,
+      message: body.message,
+    },
+  });
+
   return NextResponse.json({
     success: true,
-    message: "Message received.",
+    message: savedMessage,
   });
 }
