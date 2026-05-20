@@ -1,35 +1,63 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
-const stats = [
-  { label: "Projects", value: "12" },
-  { label: "Messages", value: "3" },
-  { label: "Clients", value: "3" },
-  { label: "Tasks", value: "4" },
-];
+type Project = {
+  id: number;
+};
 
-const navItems = [
-  { name: "Overview", href: "/dashboard" },
-  { name: "Messages", href: "/dashboard/messages" },
-  { name: "Projects", href: "/dashboard/projects" },
-  { name: "Analytics", href: "/dashboard/analytics" },
-  { name: "Billing", href: "/dashboard/billing" },
-  { name: "Team", href: "/dashboard/team" },
-  { name: "Clients", href: "/dashboard/clients" },
-  { name: "Tasks", href: "/dashboard/tasks" },
-  { name: "Calendar", href: "/dashboard/calendar" },
-  { name: "Settings", href: "/dashboard/settings" },
-];
+type Client = {
+  id: number;
+};
+
+type Task = {
+  id: number;
+};
 
 export default function DashboardPage() {
   const router = useRouter();
+
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [clients, setClients] = useState<Client[]>([]);
+  const [tasks, setTasks] = useState<Task[]>([]);
+
+  async function loadData() {
+    const projectsResponse = await fetch("/api/projects");
+    const clientsResponse = await fetch("/api/clients");
+    const tasksResponse = await fetch("/api/tasks");
+
+    setProjects(await projectsResponse.json());
+    setClients(await clientsResponse.json());
+    setTasks(await tasksResponse.json());
+  }
 
   function handleLogout() {
     document.cookie = "admin-auth=; path=/; max-age=0";
     router.push("/login");
   }
+
+  useEffect(() => {
+    loadData();
+  }, []);
+
+  const stats = [
+    { label: "Projects", value: projects.length },
+    { label: "Clients", value: clients.length },
+    { label: "Tasks", value: tasks.length },
+    { label: "Messages", value: 0 },
+  ];
+
+  const navItems = [
+    { name: "Overview", href: "/dashboard" },
+    { name: "Messages", href: "/dashboard/messages" },
+    { name: "Projects", href: "/dashboard/projects" },
+    { name: "Tasks", href: "/dashboard/tasks" },
+    { name: "Clients", href: "/dashboard/clients" },
+    { name: "Analytics", href: "/dashboard/analytics" },
+    { name: "Settings", href: "/dashboard/settings" },
+  ];
 
   return (
     <main className="flex min-h-screen bg-[#030303] text-white">
@@ -82,6 +110,7 @@ export default function DashboardPage() {
               className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8"
             >
               <p className="text-zinc-400">{stat.label}</p>
+
               <h2 className="mt-4 text-5xl font-black text-cyan-400">
                 {stat.value}
               </h2>
@@ -89,41 +118,30 @@ export default function DashboardPage() {
           ))}
         </div>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-2">
-          <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8">
-            <h2 className="text-3xl font-black">Quick Actions</h2>
+        <div className="mt-10 rounded-[2rem] border border-white/10 bg-white/[0.04] p-8">
+          <h2 className="text-3xl font-black">Quick Actions</h2>
 
-            <div className="mt-8 grid gap-4">
-              <Link href="/dashboard/messages" className="rounded-2xl bg-cyan-400/10 p-5 transition hover:bg-cyan-400/20">
-                Open Messages
-              </Link>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            <Link
+              href="/dashboard/projects"
+              className="rounded-2xl bg-cyan-400/10 p-5 transition hover:bg-cyan-400/20"
+            >
+              Manage Projects
+            </Link>
 
-              <Link href="/dashboard/projects" className="rounded-2xl bg-cyan-400/10 p-5 transition hover:bg-cyan-400/20">
-                Manage Projects
-              </Link>
+            <Link
+              href="/dashboard/tasks"
+              className="rounded-2xl bg-cyan-400/10 p-5 transition hover:bg-cyan-400/20"
+            >
+              View Tasks
+            </Link>
 
-              <Link href="/dashboard/tasks" className="rounded-2xl bg-cyan-400/10 p-5 transition hover:bg-cyan-400/20">
-                View Tasks
-              </Link>
-            </div>
-          </div>
-
-          <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8">
-            <h2 className="text-3xl font-black">System Status</h2>
-
-            <div className="mt-8 space-y-4">
-              <div className="rounded-2xl bg-black/30 p-5 text-zinc-300">
-                Website: Online
-              </div>
-
-              <div className="rounded-2xl bg-black/30 p-5 text-zinc-300">
-                Domain: Connected
-              </div>
-
-              <div className="rounded-2xl bg-black/30 p-5 text-zinc-300">
-                Deployment: Stable
-              </div>
-            </div>
+            <Link
+              href="/dashboard/clients"
+              className="rounded-2xl bg-cyan-400/10 p-5 transition hover:bg-cyan-400/20"
+            >
+              Manage Clients
+            </Link>
           </div>
         </div>
       </section>
