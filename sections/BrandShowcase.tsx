@@ -1,4 +1,18 @@
-
+function LogoMark() {
+  return (
+    <svg
+      className="h-[180px] w-[180px]"
+      viewBox="0 0 120 120"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="120" height="120" rx="32" fill="#030303" />
+      <path d="M32 78L58 42H76L50 78H32Z" fill="#22D3EE" />
+      <path d="M62 78L88 42H104L78 78H62Z" fill="white" />
+      <circle cx="30" cy="32" r="6" fill="#22D3EE" />
+    </svg>
+  );
+}
 
 export default function BrandShowcase() {
   return (
@@ -20,11 +34,7 @@ export default function BrandShowcase() {
         </div>
 
         <div className="flex items-center justify-center rounded-[2rem] border border-white/10 bg-black/40 p-12">
-     <img
-  src="/logo/mark.svg"
-  alt="2LLSOFT Brand Mark"
-  className="h-[180px] w-[180px] object-contain"
-/>
+          <LogoMark />
         </div>
       </div>
     </section>

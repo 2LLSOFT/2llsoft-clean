@@ -1,15 +1,25 @@
-
+function LogoMark() {
+  return (
+    <svg
+      className="h-9 w-9"
+      viewBox="0 0 120 120"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="120" height="120" rx="32" fill="#030303" />
+      <path d="M32 78L58 42H76L50 78H32Z" fill="#22D3EE" />
+      <path d="M62 78L88 42H104L78 78H62Z" fill="white" />
+      <circle cx="30" cy="32" r="6" fill="#22D3EE" />
+    </svg>
+  );
+}
 
 export default function Navbar() {
   return (
-    <header className="fixed top-0 z-[100] w-full border-b border-white/10 bg-black/20 backdrop-blur-2xl">
+    <header className="fixed top-0 z-[100] w-full border-b border-white/10 bg-black/30 backdrop-blur-2xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 text-white md:px-10">
         <a href="/" className="flex items-center gap-3">
-        <img
-  src="/logo/mark.svg"
-  alt="2LLSOFT Logo"
-  className="h-9 w-9 object-contain"
-/>
+          <LogoMark />
 
           <span className="text-xl font-black tracking-[0.3em] md:text-2xl">
             2LLSOFT
