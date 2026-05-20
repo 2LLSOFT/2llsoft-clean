@@ -14,3 +14,11 @@ model ContactMessage {
   message   String
   createdAt DateTime @default(now())
 }
+
+model Project {
+  id          String   @id @default(cuid())
+  name        String
+  description String
+  status      String
+  createdAt   DateTime @default(now())
+}
