@@ -22,7 +22,7 @@ export async function POST(req: Request) {
       },
     });
 
-    if (process.env.RESEND_API_KEY) {
+    if (resend) {
       await resend.emails.send({
         from: "2LLSOFT <onboarding@resend.dev>",
         to: "info@2llsoft.com",
