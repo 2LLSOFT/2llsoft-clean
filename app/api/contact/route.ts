@@ -3,6 +3,13 @@ import { NextResponse } from "next/server";
 
 export const runtime = "nodejs";
 
+export async function GET() {
+  return NextResponse.json({
+    ok: true,
+    databaseUrlExists: Boolean(process.env.DATABASE_URL),
+  });
+}
+
 export async function POST(request: Request) {
   try {
     const body = await request.json();
@@ -15,10 +22,16 @@ export async function POST(request: Request) {
       },
     });
 
-    return NextResponse.json({ success: true, data: savedMessage });
-  } catch {
+    return NextResponse.json({
+      success: true,
+      data: savedMessage,
+    });
+  } catch (error) {
     return NextResponse.json(
-      { success: false, message: "Message could not be saved." },
+      {
+        success: false,
+        error: error instanceof Error ? error.message : "Unknown error",
+      },
       { status: 500 }
     );
   }
