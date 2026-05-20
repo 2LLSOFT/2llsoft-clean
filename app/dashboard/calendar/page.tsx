@@ -22,11 +22,17 @@ export default function CalendarPage() {
         </h1>
 
         <div className="mt-14 space-y-3">
-          <Link href="/dashboard" className="block rounded-2xl border border-white/10 px-5 py-4 text-zinc-400">
+          <Link
+            href="/dashboard"
+            className="block rounded-2xl border border-white/10 px-5 py-4 text-zinc-400"
+          >
             Overview
           </Link>
 
-          <Link href="/dashboard/calendar" className="block rounded-2xl bg-white px-5 py-4 font-bold text-black">
+          <Link
+            href="/dashboard/calendar"
+            className="block rounded-2xl bg-white px-5 py-4 font-bold text-black"
+          >
             Calendar
           </Link>
         </div>
