@@ -10,6 +10,14 @@ export const translations = {
       "Premium software engineering for ambitious companies, startups and modern digital platforms.",
     viewMission: "View Mission",
     startLaunch: "Start Launch",
+    contactBadge: "Contact 2LLSOFT",
+    contactTitle: "Let’s build your next software product.",
+    contactText:
+      "Tell us about your project. We will review your idea and respond with a clear technical direction.",
+    contactName: "Your name",
+    contactEmail: "Email address",
+    contactMessage: "Project details",
+    contactButton: "Send Message",
   },
   tr: {
     navServices: "Hizmetler",
@@ -22,6 +30,14 @@ export const translations = {
       "Hırslı şirketler, girişimler ve modern dijital platformlar için premium yazılım mühendisliği.",
     viewMission: "Projeleri Gör",
     startLaunch: "Projeni Başlat",
+    contactBadge: "2LLSOFT İletişim",
+    contactTitle: "Sıradaki yazılım ürününü birlikte inşa edelim.",
+    contactText:
+      "Proje fikrini bize gönder. Teknik yönü netleştirip sana geri dönüş yapalım.",
+    contactName: "Adınız",
+    contactEmail: "E-posta adresi",
+    contactMessage: "Proje detayları",
+    contactButton: "Mesaj Gönder",
   },
   de: {
     navServices: "Leistungen",
@@ -34,6 +50,14 @@ export const translations = {
       "Premium-Softwareentwicklung für ambitionierte Unternehmen und moderne Plattformen.",
     viewMission: "Mission ansehen",
     startLaunch: "Projekt starten",
+    contactBadge: "Kontakt 2LLSOFT",
+    contactTitle: "Lassen Sie uns Ihr nächstes Softwareprodukt bauen.",
+    contactText:
+      "Beschreiben Sie Ihr Projekt. Wir prüfen die Idee und antworten mit klarer technischer Richtung.",
+    contactName: "Ihr Name",
+    contactEmail: "E-Mail-Adresse",
+    contactMessage: "Projektdetails",
+    contactButton: "Nachricht senden",
   },
   pl: {
     navServices: "Usługi",
@@ -46,6 +70,14 @@ export const translations = {
       "Premium software engineering dla ambitnych firm, startupów i nowoczesnych platform.",
     viewMission: "Zobacz projekty",
     startLaunch: "Rozpocznij projekt",
+    contactBadge: "Kontakt 2LLSOFT",
+    contactTitle: "Zbudujmy Twój następny produkt software.",
+    contactText:
+      "Opisz swój projekt. Przeanalizujemy pomysł i odpowiemy z jasnym kierunkiem technicznym.",
+    contactName: "Twoje imię",
+    contactEmail: "Adres e-mail",
+    contactMessage: "Szczegóły projektu",
+    contactButton: "Wyślij wiadomość",
   },
   fr: {
     navServices: "Services",
@@ -58,6 +90,14 @@ export const translations = {
       "Ingénierie logicielle premium pour entreprises ambitieuses, startups et plateformes modernes.",
     viewMission: "Voir les projets",
     startLaunch: "Lancer un projet",
+    contactBadge: "Contact 2LLSOFT",
+    contactTitle: "Construisons votre prochain produit logiciel.",
+    contactText:
+      "Parlez-nous de votre projet. Nous analyserons l’idée et répondrons avec une direction technique claire.",
+    contactName: "Votre nom",
+    contactEmail: "Adresse e-mail",
+    contactMessage: "Détails du projet",
+    contactButton: "Envoyer le message",
   },
   es: {
     navServices: "Servicios",
@@ -70,6 +110,14 @@ export const translations = {
       "Ingeniería de software premium para empresas ambiciosas, startups y plataformas modernas.",
     viewMission: "Ver proyectos",
     startLaunch: "Iniciar proyecto",
+    contactBadge: "Contacto 2LLSOFT",
+    contactTitle: "Construyamos tu próximo producto de software.",
+    contactText:
+      "Cuéntanos sobre tu proyecto. Revisaremos tu idea y responderemos con una dirección técnica clara.",
+    contactName: "Tu nombre",
+    contactEmail: "Correo electrónico",
+    contactMessage: "Detalles del proyecto",
+    contactButton: "Enviar mensaje",
   },
   it: {
     navServices: "Servizi",
@@ -82,6 +130,14 @@ export const translations = {
       "Ingegneria software premium per aziende ambiziose, startup e piattaforme moderne.",
     viewMission: "Vedi progetti",
     startLaunch: "Avvia progetto",
+    contactBadge: "Contatta 2LLSOFT",
+    contactTitle: "Costruiamo il tuo prossimo prodotto software.",
+    contactText:
+      "Raccontaci il tuo progetto. Valuteremo l’idea e risponderemo con una direzione tecnica chiara.",
+    contactName: "Il tuo nome",
+    contactEmail: "Indirizzo email",
+    contactMessage: "Dettagli del progetto",
+    contactButton: "Invia messaggio",
   },
   nl: {
     navServices: "Diensten",
@@ -94,6 +150,14 @@ export const translations = {
       "Premium software engineering voor ambitieuze bedrijven, startups en moderne platforms.",
     viewMission: "Bekijk projecten",
     startLaunch: "Start project",
+    contactBadge: "Contact 2LLSOFT",
+    contactTitle: "Laten we uw volgende softwareproduct bouwen.",
+    contactText:
+      "Vertel ons over uw project. We beoordelen uw idee en reageren met een duidelijke technische richting.",
+    contactName: "Uw naam",
+    contactEmail: "E-mailadres",
+    contactMessage: "Projectdetails",
+    contactButton: "Bericht verzenden",
   },
   pt: {
     navServices: "Serviços",
@@ -106,6 +170,14 @@ export const translations = {
       "Engenharia de software premium para empresas ambiciosas, startups e plataformas modernas.",
     viewMission: "Ver projetos",
     startLaunch: "Iniciar projeto",
+    contactBadge: "Contato 2LLSOFT",
+    contactTitle: "Vamos construir seu próximo produto de software.",
+    contactText:
+      "Conte-nos sobre seu projeto. Vamos analisar sua ideia e responder com uma direção técnica clara.",
+    contactName: "Seu nome",
+    contactEmail: "Endereço de e-mail",
+    contactMessage: "Detalhes do projeto",
+    contactButton: "Enviar mensagem",
   },
   ar: {
     navServices: "الخدمات",
@@ -118,6 +190,14 @@ export const translations = {
       "هندسة برمجيات مميزة للشركات الطموحة والمنصات الرقمية الحديثة.",
     viewMission: "عرض المشاريع",
     startLaunch: "ابدأ المشروع",
+    contactBadge: "تواصل مع 2LLSOFT",
+    contactTitle: "لنقم ببناء منتجك البرمجي القادم.",
+    contactText:
+      "أرسل لنا فكرة مشروعك. سنراجعها ونرد عليك بتوجه تقني واضح.",
+    contactName: "اسمك",
+    contactEmail: "البريد الإلكتروني",
+    contactMessage: "تفاصيل المشروع",
+    contactButton: "إرسال الرسالة",
   },
   ru: {
     navServices: "Услуги",
@@ -130,6 +210,14 @@ export const translations = {
       "Премиальная разработка ПО для амбициозных компаний, стартапов и современных платформ.",
     viewMission: "Смотреть проекты",
     startLaunch: "Начать проект",
+    contactBadge: "Связаться с 2LLSOFT",
+    contactTitle: "Создадим ваш следующий программный продукт.",
+    contactText:
+      "Расскажите нам о проекте. Мы изучим идею и ответим с понятным техническим направлением.",
+    contactName: "Ваше имя",
+    contactEmail: "Электронная почта",
+    contactMessage: "Детали проекта",
+    contactButton: "Отправить сообщение",
   },
   ja: {
     navServices: "サービス",
@@ -142,6 +230,14 @@ export const translations = {
       "野心的な企業、スタートアップ、モダンなデジタルプラットフォーム向けのプレミアムソフトウェア開発。",
     viewMission: "プロジェクトを見る",
     startLaunch: "プロジェクト開始",
+    contactBadge: "2LLSOFT お問い合わせ",
+    contactTitle: "次のソフトウェア製品を一緒に作りましょう。",
+    contactText:
+      "プロジェクトについて教えてください。内容を確認し、明確な技術方針をお返しします。",
+    contactName: "お名前",
+    contactEmail: "メールアドレス",
+    contactMessage: "プロジェクト詳細",
+    contactButton: "メッセージ送信",
   },
 };
 

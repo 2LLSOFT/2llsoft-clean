@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { useLanguage } from "@/lib/language-store";
 
 export default function Contact() {
+  const { t } = useLanguage();
   const [status, setStatus] = useState("");
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -38,27 +40,42 @@ export default function Contact() {
       <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
         <div className="rounded-[3rem] border border-white/10 bg-white/[0.04] p-10 backdrop-blur-2xl md:p-16">
           <p className="text-xs uppercase tracking-[0.5em] text-cyan-400">
-            Contact 2LLSOFT
+            {t.contactBadge}
           </p>
 
           <h2 className="mt-5 text-4xl font-black leading-tight md:text-7xl">
-            Let’s build your next software product.
+            {t.contactTitle}
           </h2>
 
           <p className="mt-8 max-w-2xl text-lg leading-8 text-zinc-400">
-            Tell us about your project. We will review your idea and respond
-            with a clear technical direction.
+            {t.contactText}
           </p>
 
           <form onSubmit={handleSubmit} className="mt-12 grid gap-4 md:grid-cols-2">
-            <input required name="name" placeholder="Your name" className="rounded-2xl border border-white/10 bg-black/40 px-5 py-4 outline-none transition focus:border-cyan-400" />
+            <input
+              required
+              name="name"
+              placeholder={t.contactName}
+              className="rounded-2xl border border-white/10 bg-black/40 px-5 py-4 outline-none transition focus:border-cyan-400"
+            />
 
-            <input required type="email" name="email" placeholder="Email address" className="rounded-2xl border border-white/10 bg-black/40 px-5 py-4 outline-none transition focus:border-cyan-400" />
+            <input
+              required
+              type="email"
+              name="email"
+              placeholder={t.contactEmail}
+              className="rounded-2xl border border-white/10 bg-black/40 px-5 py-4 outline-none transition focus:border-cyan-400"
+            />
 
-            <textarea required name="message" placeholder="Project details" className="min-h-[190px] rounded-2xl border border-white/10 bg-black/40 px-5 py-4 outline-none transition focus:border-cyan-400 md:col-span-2" />
+            <textarea
+              required
+              name="message"
+              placeholder={t.contactMessage}
+              className="min-h-[190px] rounded-2xl border border-white/10 bg-black/40 px-5 py-4 outline-none transition focus:border-cyan-400 md:col-span-2"
+            />
 
             <button className="rounded-full bg-white px-8 py-4 font-bold text-black transition duration-300 hover:scale-105 hover:bg-cyan-300 md:w-fit">
-              Send Message
+              {t.contactButton}
             </button>
           </form>
 
