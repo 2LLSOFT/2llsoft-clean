@@ -4,31 +4,39 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
-type Item = {
-  id: number | string;
+type Project = {
+  id: number;
+};
+
+type Client = {
+  id: number;
+};
+
+type Task = {
+  id: number;
 };
 
 export default function DashboardPage() {
   const router = useRouter();
 
-  const [projects, setProjects] = useState<Item[]>([]);
-  const [clients, setClients] = useState<Item[]>([]);
-  const [tasks, setTasks] = useState<Item[]>([]);
-  const [messages, setMessages] = useState<Item[]>([]);
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [clients, setClients] = useState<Client[]>([]);
+  const [tasks, setTasks] = useState<Task[]>([]);
 
   async function loadData() {
     const projectsResponse = await fetch("/api/projects");
     const clientsResponse = await fetch("/api/clients");
     const tasksResponse = await fetch("/api/tasks");
-    const messagesResponse = await fetch("/api/messages");
 
     setProjects(await projectsResponse.json());
     setClients(await clientsResponse.json());
     setTasks(await tasksResponse.json());
-    setMessages(await messagesResponse.json());
   }
 
- document.cookie = "admin-auth=; path=/; max-age=0";
+  function handleLogout() {
+    document.cookie = "llsoft_admin_session=; path=/; max-age=0";
+    router.push("/login");
+  }
 
   useEffect(() => {
     loadData();
@@ -38,7 +46,7 @@ export default function DashboardPage() {
     { label: "Projects", value: projects.length },
     { label: "Clients", value: clients.length },
     { label: "Tasks", value: tasks.length },
-    { label: "Messages", value: messages.length },
+    { label: "Messages", value: 0 },
   ];
 
   const navItems = [
@@ -113,20 +121,25 @@ export default function DashboardPage() {
         <div className="mt-10 rounded-[2rem] border border-white/10 bg-white/[0.04] p-8">
           <h2 className="text-3xl font-black">Quick Actions</h2>
 
-          <div className="mt-8 grid gap-4 md:grid-cols-4">
-            <Link href="/dashboard/messages" className="rounded-2xl bg-cyan-400/10 p-5 transition hover:bg-cyan-400/20">
-              Open Messages
-            </Link>
-
-            <Link href="/dashboard/projects" className="rounded-2xl bg-cyan-400/10 p-5 transition hover:bg-cyan-400/20">
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            <Link
+              href="/dashboard/projects"
+              className="rounded-2xl bg-cyan-400/10 p-5 transition hover:bg-cyan-400/20"
+            >
               Manage Projects
             </Link>
 
-            <Link href="/dashboard/tasks" className="rounded-2xl bg-cyan-400/10 p-5 transition hover:bg-cyan-400/20">
+            <Link
+              href="/dashboard/tasks"
+              className="rounded-2xl bg-cyan-400/10 p-5 transition hover:bg-cyan-400/20"
+            >
               View Tasks
             </Link>
 
-            <Link href="/dashboard/clients" className="rounded-2xl bg-cyan-400/10 p-5 transition hover:bg-cyan-400/20">
+            <Link
+              href="/dashboard/clients"
+              className="rounded-2xl bg-cyan-400/10 p-5 transition hover:bg-cyan-400/20"
+            >
               Manage Clients
             </Link>
           </div>
