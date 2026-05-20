@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { resend } from "@/lib/resend";
 
 export const runtime = "nodejs";
 
@@ -21,10 +22,23 @@ export async function POST(req: Request) {
       },
     });
 
+    if (process.env.RESEND_API_KEY) {
+      await resend.emails.send({
+        from: "2LLSOFT <onboarding@resend.dev>",
+        to: "info@2llsoft.com",
+        subject: "New Contact Message",
+        html: `
+          <h1>New Message</h1>
+          <p><strong>Name:</strong> ${body.name}</p>
+          <p><strong>Email:</strong> ${body.email}</p>
+          <p><strong>Message:</strong> ${body.message}</p>
+        `,
+      });
+    }
+
     return NextResponse.json({
       success: true,
       created,
-      notification: "prepared",
     });
   } catch (err) {
     return NextResponse.json(
