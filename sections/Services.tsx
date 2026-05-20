@@ -1,19 +1,27 @@
 const services = [
   {
     title: "Web Platforms",
-    text: "High-performance company websites, SaaS platforms and product landing pages.",
+    description:
+      "Premium company websites, SaaS platforms and landing pages built with modern frontend systems.",
+    items: ["Next.js", "SEO", "Responsive UI"],
   },
   {
-    title: "Mobile Apps",
-    text: "Modern mobile applications with clean user experience and scalable structure.",
+    title: "Mobile Applications",
+    description:
+      "Cross-platform mobile applications with scalable architecture and clean user experience.",
+    items: ["Flutter", "API Integration", "Push-ready"],
   },
   {
-    title: "Backend APIs",
-    text: "Secure API systems, authentication flows and server-side business logic.",
+    title: "Backend Systems",
+    description:
+      "Secure APIs, databases, authentication systems and dashboard-driven backend architecture.",
+    items: ["Node.js", "PostgreSQL", "Prisma"],
   },
   {
-    title: "Cloud Systems",
-    text: "Deployment, hosting, monitoring and production-ready infrastructure.",
+    title: "AI Integrations",
+    description:
+      "AI-powered workflows, automation systems and intelligent product features for modern companies.",
+    items: ["OpenAI", "Automation", "Custom AI"],
   },
 ];
 
@@ -24,27 +32,38 @@ export default function Services() {
         Services
       </p>
 
-      <h2 className="mt-4 max-w-4xl text-4xl font-black leading-tight md:text-6xl">
-        Software systems designed for real businesses.
+      <h2 className="mt-4 max-w-5xl text-4xl font-black leading-tight md:text-7xl">
+        Software services designed for serious business growth.
       </h2>
 
-      <div className="mt-14 grid gap-6 md:grid-cols-4">
+      <div className="mt-16 grid gap-8 lg:grid-cols-4">
         {services.map((service, index) => (
           <div
             key={service.title}
             className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 transition duration-300 hover:-translate-y-2 hover:border-cyan-400/40 hover:bg-cyan-400/10"
           >
-            <div className="mb-8 text-sm text-cyan-400">
+            <div className="text-sm text-cyan-400">
               0{index + 1}
             </div>
 
-            <h3 className="text-2xl font-bold">
+            <h3 className="mt-8 text-3xl font-black">
               {service.title}
             </h3>
 
-            <p className="mt-4 leading-relaxed text-zinc-400">
-              {service.text}
+            <p className="mt-5 leading-7 text-zinc-400">
+              {service.description}
             </p>
+
+            <div className="mt-8 space-y-3">
+              {service.items.map((item) => (
+                <div
+                  key={item}
+                  className="rounded-full border border-white/10 bg-black/30 px-4 py-2 text-sm text-zinc-300"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
           </div>
         ))}
       </div>
