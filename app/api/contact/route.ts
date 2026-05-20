@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 
+export const runtime = "nodejs";
+
 export async function GET() {
   return NextResponse.json({
     ok: true,
@@ -22,6 +24,7 @@ export async function POST(req: Request) {
     return NextResponse.json({
       success: true,
       created,
+      notification: "prepared",
     });
   } catch (err) {
     return NextResponse.json(
@@ -29,9 +32,7 @@ export async function POST(req: Request) {
         success: false,
         error: String(err),
       },
-      {
-        status: 500,
-      }
+      { status: 500 }
     );
   }
 }
