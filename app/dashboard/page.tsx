@@ -28,10 +28,7 @@ export default function DashboardPage() {
     setMessages(await messagesResponse.json());
   }
 
-  function handleLogout() {
-    document.cookie = "admin-auth=; path=/; max-age=0";
-    router.push("/login");
-  }
+ document.cookie = "admin-auth=; path=/; max-age=0";
 
   useEffect(() => {
     loadData();
