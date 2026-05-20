@@ -19,6 +19,7 @@ import Pricing from "@/sections/Pricing";
 import CTA from "@/sections/CTA";
 import FAQ from "@/sections/FAQ";
 import Contact from "@/sections/Contact";
+import Trust from "@/sections/Trust";
 
 export default function Home() {
   return (
@@ -32,6 +33,7 @@ export default function Home() {
       <Services />
       <Features />
       <Projects />
+      <Trust />
       <About />
       <Stats />
       <Numbers />
