@@ -7,7 +7,7 @@ export const dynamic = "force-dynamic";
 export default async function MessagesPage() {
   const messages = await prisma.contactMessage.findMany({
     orderBy: { createdAt: "desc" },
-  });
+  }).catch(() => []);
 
   return (
     <main className="flex min-h-screen bg-[#030303] text-white">
@@ -15,21 +15,10 @@ export default async function MessagesPage() {
         <h1 className="text-2xl font-black tracking-[0.3em]">2LLSOFT</h1>
 
         <div className="mt-14 space-y-3">
-          <Link href="/dashboard" className="block rounded-2xl border border-white/10 px-5 py-4 text-zinc-400">
-            Overview
-          </Link>
-
-          <Link href="/dashboard/messages" className="block rounded-2xl bg-white px-5 py-4 font-bold text-black">
-            Messages
-          </Link>
-
-          <Link href="/dashboard/projects" className="block rounded-2xl border border-white/10 px-5 py-4 text-zinc-400">
-            Projects
-          </Link>
-
-          <Link href="/dashboard/settings" className="block rounded-2xl border border-white/10 px-5 py-4 text-zinc-400">
-            Settings
-          </Link>
+          <Link href="/dashboard" className="block rounded-2xl border border-white/10 px-5 py-4 text-zinc-400">Overview</Link>
+          <Link href="/dashboard/messages" className="block rounded-2xl bg-white px-5 py-4 font-bold text-black">Messages</Link>
+          <Link href="/dashboard/projects" className="block rounded-2xl border border-white/10 px-5 py-4 text-zinc-400">Projects</Link>
+          <Link href="/dashboard/settings" className="block rounded-2xl border border-white/10 px-5 py-4 text-zinc-400">Settings</Link>
         </div>
       </aside>
 
@@ -41,13 +30,19 @@ export default async function MessagesPage() {
         <h1 className="mt-3 text-5xl font-black">Messages</h1>
 
         <div className="mt-10 space-y-5">
-          {messages.map((item) => (
-            <div key={item.id} className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8">
-              <h2 className="text-2xl font-black">{item.name}</h2>
-              <p className="mt-2 text-cyan-400">{item.email}</p>
-              <p className="mt-5 text-zinc-400">{item.message}</p>
+          {messages.length === 0 ? (
+            <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 text-zinc-400">
+              No messages yet.
             </div>
-          ))}
+          ) : (
+            messages.map((item) => (
+              <div key={item.id} className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8">
+                <h2 className="text-2xl font-black">{item.name}</h2>
+                <p className="mt-2 text-cyan-400">{item.email}</p>
+                <p className="mt-5 text-zinc-400">{item.message}</p>
+              </div>
+            ))
+          )}
         </div>
       </section>
     </main>
