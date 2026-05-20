@@ -1,38 +1,39 @@
-import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
-
-export const runtime = "nodejs";
+import { prisma } from "@/lib/prisma";
 
 export async function GET() {
   return NextResponse.json({
     ok: true,
-    databaseUrlExists: Boolean(process.env.DATABASE_URL),
   });
 }
 
-export async function POST(request: Request) {
+export async function POST(req: Request) {
   try {
-    const body = await request.json();
+    const body = await req.json();
 
-    const savedMessage = await prisma.contactMessage.create({
+    const created = await prisma.contactMessage.create({
       data: {
-        name: String(body.name),
-        email: String(body.email),
-        message: String(body.message),
+        name: body.name || "Unknown",
+        email: body.email || "unknown@test.com",
+        message: body.message || "Empty",
       },
     });
 
     return NextResponse.json({
       success: true,
-      data: savedMessage,
+      created,
     });
-  } catch (error) {
+  } catch (err) {
+    console.error(err);
+
     return NextResponse.json(
       {
         success: false,
-        error: error instanceof Error ? error.message : "Unknown error",
+        error: String(err),
       },
-      { status: 500 }
+      {
+        status: 500,
+      }
     );
   }
 }
