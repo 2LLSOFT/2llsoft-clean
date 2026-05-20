@@ -21,11 +21,13 @@ import CTA from "@/sections/CTA";
 import Testimonials from "@/sections/Testimonials";
 import FAQ from "@/sections/FAQ";
 import Contact from "@/sections/Contact";
+import CustomCursor from "@/components/CustomCursor";
 
 export default function Home() {
   return (
     <main className="relative overflow-hidden bg-[#030303]">
       <SpaceBackground />
+      <CustomCursor />
 
       <Navbar />
       <Hero />
