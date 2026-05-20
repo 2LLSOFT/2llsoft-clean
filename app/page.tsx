@@ -22,12 +22,14 @@ import Testimonials from "@/sections/Testimonials";
 import FAQ from "@/sections/FAQ";
 import Contact from "@/sections/Contact";
 import CustomCursor from "@/components/CustomCursor";
+import ClickEffects from "@/components/ClickEffects";
 
 export default function Home() {
   return (
     <main className="relative overflow-hidden bg-[#030303]">
       <SpaceBackground />
       <CustomCursor />
+      <ClickEffects />
 
       <Navbar />
       <Hero />
