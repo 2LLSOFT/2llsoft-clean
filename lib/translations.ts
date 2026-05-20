@@ -47,6 +47,102 @@ export const translations = {
     viewMission: "Zobacz projekty",
     startLaunch: "Rozpocznij projekt",
   },
+  fr: {
+    navServices: "Services",
+    navPortfolio: "Portfolio",
+    navPricing: "Tarifs",
+    navContact: "Contact",
+    heroBadge: "Centre de Mission / 2LLSOFT",
+    heroTitle: "Nous lançons des systèmes numériques au-delà des limites.",
+    heroText:
+      "Ingénierie logicielle premium pour entreprises ambitieuses, startups et plateformes modernes.",
+    viewMission: "Voir les projets",
+    startLaunch: "Lancer un projet",
+  },
+  es: {
+    navServices: "Servicios",
+    navPortfolio: "Portafolio",
+    navPricing: "Precios",
+    navContact: "Contacto",
+    heroBadge: "Control de Misión / 2LLSOFT",
+    heroTitle: "Lanzamos sistemas digitales más allá de los límites.",
+    heroText:
+      "Ingeniería de software premium para empresas ambiciosas, startups y plataformas modernas.",
+    viewMission: "Ver proyectos",
+    startLaunch: "Iniciar proyecto",
+  },
+  it: {
+    navServices: "Servizi",
+    navPortfolio: "Portfolio",
+    navPricing: "Prezzi",
+    navContact: "Contatto",
+    heroBadge: "Controllo Missione / 2LLSOFT",
+    heroTitle: "Lanciamo sistemi digitali oltre ogni limite.",
+    heroText:
+      "Ingegneria software premium per aziende ambiziose, startup e piattaforme moderne.",
+    viewMission: "Vedi progetti",
+    startLaunch: "Avvia progetto",
+  },
+  nl: {
+    navServices: "Diensten",
+    navPortfolio: "Portfolio",
+    navPricing: "Prijzen",
+    navContact: "Contact",
+    heroBadge: "Mission Control / 2LLSOFT",
+    heroTitle: "Wij lanceren digitale systemen voorbij grenzen.",
+    heroText:
+      "Premium software engineering voor ambitieuze bedrijven, startups en moderne platforms.",
+    viewMission: "Bekijk projecten",
+    startLaunch: "Start project",
+  },
+  pt: {
+    navServices: "Serviços",
+    navPortfolio: "Portfólio",
+    navPricing: "Preços",
+    navContact: "Contato",
+    heroBadge: "Controle de Missão / 2LLSOFT",
+    heroTitle: "Lançamos sistemas digitais além dos limites.",
+    heroText:
+      "Engenharia de software premium para empresas ambiciosas, startups e plataformas modernas.",
+    viewMission: "Ver projetos",
+    startLaunch: "Iniciar projeto",
+  },
+  ar: {
+    navServices: "الخدمات",
+    navPortfolio: "الأعمال",
+    navPricing: "الأسعار",
+    navContact: "تواصل",
+    heroBadge: "مركز المهمة / 2LLSOFT",
+    heroTitle: "نطلق الأنظمة الرقمية إلى ما بعد الحدود.",
+    heroText:
+      "هندسة برمجيات مميزة للشركات الطموحة والمنصات الرقمية الحديثة.",
+    viewMission: "عرض المشاريع",
+    startLaunch: "ابدأ المشروع",
+  },
+  ru: {
+    navServices: "Услуги",
+    navPortfolio: "Портфолио",
+    navPricing: "Цены",
+    navContact: "Контакты",
+    heroBadge: "Центр миссии / 2LLSOFT",
+    heroTitle: "Мы запускаем цифровые системы за пределы возможностей.",
+    heroText:
+      "Премиальная разработка ПО для амбициозных компаний, стартапов и современных платформ.",
+    viewMission: "Смотреть проекты",
+    startLaunch: "Начать проект",
+  },
+  ja: {
+    navServices: "サービス",
+    navPortfolio: "ポートフォリオ",
+    navPricing: "料金",
+    navContact: "お問い合わせ",
+    heroBadge: "ミッションコントロール / 2LLSOFT",
+    heroTitle: "限界を超えるデジタルシステムを打ち上げます。",
+    heroText:
+      "野心的な企業、スタートアップ、モダンなデジタルプラットフォーム向けのプレミアムソフトウェア開発。",
+    viewMission: "プロジェクトを見る",
+    startLaunch: "プロジェクト開始",
+  },
 };
 
 export type Language = keyof typeof translations;
