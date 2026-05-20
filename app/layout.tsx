@@ -8,8 +8,13 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "2LLSOFT | Modern Software Solutions",
+
   description:
     "2LLSOFT builds premium web platforms, mobile applications, cloud systems and AI-powered software products.",
+
+  icons: {
+    icon: "/logo/mark.svg",
+  },
 };
 
 export default function RootLayout({
