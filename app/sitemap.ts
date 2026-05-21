@@ -1,24 +1,26 @@
-export default function sitemap() {
+import type { MetadataRoute } from "next";
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = "https://2llsoft.com";
+
   return [
     {
-      url: "https://2llsoft.com",
+      url: baseUrl,
       lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 1,
     },
     {
-      url: "https://2llsoft.com/login",
+      url: `${baseUrl}/privacy`,
       lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.3,
     },
     {
-      url: "https://2llsoft.com/dashboard",
+      url: `${baseUrl}/terms`,
       lastModified: new Date(),
-    },
-    {
-      url: "https://2llsoft.com/privacy",
-      lastModified: new Date(),
-    },
-    {
-      url: "https://2llsoft.com/terms",
-      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.3,
     },
   ];
 }
