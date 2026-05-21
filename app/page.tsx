@@ -37,6 +37,8 @@ import AdvancedStats from "@/sections/AdvancedStats";
 import VisualGrid from "@/sections/VisualGrid";
 import FinalCTA from "@/sections/FinalCTA";
 import TerminalPreview from "@/sections/TerminalPreview";
+import PortfolioMockups from "@/sections/PortfolioMockups";
+
 export default function Home() {
   return (
     <main className="relative overflow-hidden bg-[#030303]">
@@ -57,6 +59,7 @@ export default function Home() {
       <FadeIn><Features /></FadeIn>
       <FadeIn><Projects /></FadeIn>
       <FadeIn><CaseStudies /></FadeIn>
+      <FadeIn><PortfolioMockups /></FadeIn>
       <FadeIn><ProductShowcase /></FadeIn>
       <FadeIn><FloatingPanels /></FadeIn>
       <FadeIn><LiveFeed /></FadeIn>
