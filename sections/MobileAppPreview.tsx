@@ -1,29 +1,36 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useLanguage } from "@/components/LanguageProvider";
 
 export default function MobileAppPreview() {
+  const { language } = useLanguage();
+  const isTR = language === "tr";
+
   return (
     <section className="relative overflow-hidden bg-[#030303] px-6 py-28 text-white md:px-20">
       <div className="grid items-center gap-16 lg:grid-cols-2">
         <div>
           <p className="text-xs uppercase tracking-[0.5em] text-cyan-400">
-            Mobile Systems
+            {isTR ? "Mobil Sistemler" : "Mobile Systems"}
           </p>
 
           <h2 className="mt-5 text-4xl font-black leading-tight md:text-7xl">
-            Premium mobile app interfaces for modern businesses.
+            {isTR
+              ? "Modern işletmeler için premium mobil uygulama arayüzleri."
+              : "Premium mobile app interfaces for modern businesses."}
           </h2>
 
           <p className="mt-8 max-w-2xl text-lg leading-8 text-zinc-400">
-            We build cross-platform mobile applications with clean user
-            experience, scalable APIs and production-ready architecture.
+            {isTR
+              ? "Temiz kullanıcı deneyimi, ölçeklenebilir API ve production-ready mimariyle cross-platform mobil uygulamalar geliştiriyoruz."
+              : "We build cross-platform mobile applications with clean user experience, scalable APIs and production-ready architecture."}
           </p>
         </div>
 
         <motion.div
-          animate={{ y: [0, -18, 0] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+          animate={{ y: [0, -12, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           className="mx-auto w-full max-w-[360px]"
         >
           <div className="rounded-[3rem] border border-white/10 bg-zinc-900 p-4 shadow-[0_0_80px_rgba(34,211,238,0.2)]">
@@ -34,19 +41,21 @@ export default function MobileAppPreview() {
                 <p className="text-sm text-cyan-300">2LLSOFT App</p>
 
                 <h3 className="mt-4 text-3xl font-black">
-                  Mobile Dashboard
+                  {isTR ? "Mobil Dashboard" : "Mobile Dashboard"}
                 </h3>
 
                 <div className="mt-8 grid gap-4">
                   <div className="rounded-2xl bg-black/40 p-5">
-                    <p className="text-zinc-500">Revenue</p>
+                    <p className="text-zinc-500">{isTR ? "Gelir" : "Revenue"}</p>
                     <h4 className="mt-2 text-3xl font-black text-cyan-400">
                       €12,480
                     </h4>
                   </div>
 
                   <div className="rounded-2xl bg-black/40 p-5">
-                    <p className="text-zinc-500">Active Users</p>
+                    <p className="text-zinc-500">
+                      {isTR ? "Aktif Kullanıcılar" : "Active Users"}
+                    </p>
                     <h4 className="mt-2 text-3xl font-black text-cyan-400">
                       8.2K
                     </h4>
