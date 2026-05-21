@@ -21,7 +21,6 @@ import CTA from "@/sections/CTA";
 import Testimonials from "@/sections/Testimonials";
 import FAQ from "@/sections/FAQ";
 import Contact from "@/sections/Contact";
-import CustomCursor from "@/components/CustomCursor";
 import ClickEffects from "@/components/ClickEffects";
 import ScrollProgress from "@/components/ScrollProgress";
 import BackToTop from "@/components/BackToTop";
@@ -40,7 +39,6 @@ export default function Home() {
     <main className="relative overflow-hidden bg-[#030303]">
       <SpaceBackground />
       <ScrollProgress />
-      <CustomCursor />
       <ClickEffects />
       <BackToTop />
       <InstagramButton />

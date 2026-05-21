@@ -72,12 +72,6 @@ button:active {
 .glow-hover:hover {
   box-shadow: 0 0 40px rgba(34, 211, 238, 0.25);
 }
-@media (min-width: 768px) {
-  html,
-  body {
-    cursor: none;
-  }
-}
 .glass-card {
   background: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(24px);
