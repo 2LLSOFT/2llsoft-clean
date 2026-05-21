@@ -1,43 +1,49 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-const cards = [
-  {
-    title: "Live Analytics",
-    value: "48K",
-    label: "Page Views",
-  },
-  {
-    title: "Client Requests",
-    value: "312",
-    label: "Active Leads",
-  },
-  {
-    title: "System Health",
-    value: "99.9%",
-    label: "Uptime",
-  },
-];
+import { useLanguage } from "@/components/LanguageProvider";
 
 export default function ProductShowcase() {
+  const { language } = useLanguage();
+  const isTR = language === "tr";
+
+  const cards = [
+    {
+      title: isTR ? "Canlı Analytics" : "Live Analytics",
+      value: "48K",
+      label: isTR ? "Sayfa Görüntüleme" : "Page Views",
+    },
+    {
+      title: isTR ? "Müşteri Talepleri" : "Client Requests",
+      value: "312",
+      label: isTR ? "Aktif Lead" : "Active Leads",
+    },
+    {
+      title: isTR ? "Sistem Sağlığı" : "System Health",
+      value: "99.9%",
+      label: isTR ? "Uptime" : "Uptime",
+    },
+  ];
+
   return (
     <section className="relative overflow-hidden bg-[#030303] px-6 py-24 text-white md:px-20">
       <p className="text-xs uppercase tracking-[0.5em] text-cyan-400">
-        Product Systems
+        {isTR ? "Ürün Sistemleri" : "Product Systems"}
       </p>
 
       <h2 className="mt-5 max-w-5xl text-4xl font-black leading-tight md:text-7xl">
-        Animated dashboards and intelligent business systems.
+        {isTR
+          ? "Animasyonlu dashboardlar ve akıllı iş sistemleri."
+          : "Animated dashboards and intelligent business systems."}
       </h2>
 
       <div className="relative mt-16 grid gap-8 lg:grid-cols-3">
         {cards.map((card, index) => (
           <motion.div
             key={card.title}
-            animate={{ y: [0, -18, 0] }}
+            animate={{ y: [0, -10, 0] }}
             transition={{
-              duration: 4,
+              duration: 6,
               repeat: Infinity,
               delay: index * 0.4,
               ease: "easeInOut",

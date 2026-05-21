@@ -1,38 +1,40 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-const stats = [
-  {
-    value: "48+",
-    label: "Projects Delivered",
-  },
-  {
-    value: "99.9%",
-    label: "Infrastructure Stability",
-  },
-  {
-    value: "24/7",
-    label: "System Monitoring",
-  },
-  {
-    value: "12K+",
-    label: "Users Reached",
-  },
-];
+import { useLanguage } from "@/components/LanguageProvider";
 
 export default function AdvancedStats() {
+  const { language } = useLanguage();
+  const isTR = language === "tr";
+
+  const stats = [
+    {
+      value: "48+",
+      label: isTR ? "Teslim Edilen Proje" : "Projects Delivered",
+    },
+    {
+      value: "99.9%",
+      label: isTR ? "Altyapı Stabilitesi" : "Infrastructure Stability",
+    },
+    {
+      value: "24/7",
+      label: isTR ? "Sistem İzleme" : "System Monitoring",
+    },
+    {
+      value: "12K+",
+      label: isTR ? "Ulaşılan Kullanıcı" : "Users Reached",
+    },
+  ];
+
   return (
     <section className="bg-[#030303] px-6 py-24 text-white md:px-20">
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
         {stats.map((stat, index) => (
           <motion.div
             key={stat.label}
-            animate={{
-              y: [0, -10, 0],
-            }}
+            animate={{ y: [0, -6, 0] }}
             transition={{
-              duration: 4,
+              duration: 6,
               repeat: Infinity,
               delay: index * 0.2,
             }}

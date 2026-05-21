@@ -1,48 +1,51 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-const panels = [
-  {
-    title: "AI Dashboard",
-    value: "94%",
-    text: "Automation accuracy",
-  },
-  {
-    title: "Cloud Systems",
-    value: "12TB",
-    text: "Live infrastructure",
-  },
-  {
-    title: "Active Users",
-    value: "48K",
-    text: "Global usage",
-  },
-];
+import { useLanguage } from "@/components/LanguageProvider";
 
 export default function FloatingPanels() {
+  const { language } = useLanguage();
+  const isTR = language === "tr";
+
+  const panels = [
+    {
+      title: isTR ? "AI Dashboard" : "AI Dashboard",
+      value: "94%",
+      text: isTR ? "Otomasyon doğruluğu" : "Automation accuracy",
+    },
+    {
+      title: isTR ? "Cloud Sistemleri" : "Cloud Systems",
+      value: "12TB",
+      text: isTR ? "Canlı altyapı" : "Live infrastructure",
+    },
+    {
+      title: isTR ? "Aktif Kullanıcılar" : "Active Users",
+      value: "48K",
+      text: isTR ? "Global kullanım" : "Global usage",
+    },
+  ];
+
   return (
     <section className="relative overflow-hidden bg-[#030303] px-6 py-28 text-white md:px-20">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#22d3ee11,transparent_40%)]" />
 
       <p className="text-xs uppercase tracking-[0.5em] text-cyan-400">
-        Live Interface Systems
+        {isTR ? "Canlı Arayüz Sistemleri" : "Live Interface Systems"}
       </p>
 
       <h2 className="mt-5 max-w-6xl text-4xl font-black leading-tight md:text-7xl">
-        Intelligent interfaces powered by cinematic software engineering.
+        {isTR
+          ? "Cinematic yazılım mühendisliğiyle güçlendirilmiş akıllı arayüzler."
+          : "Intelligent interfaces powered by cinematic software engineering."}
       </h2>
 
       <div className="relative mt-24 grid gap-8 lg:grid-cols-3">
         {panels.map((panel, index) => (
           <motion.div
             key={panel.title}
-            animate={{
-              y: [0, -20, 0],
-              rotate: [0, 1, 0, -1, 0],
-            }}
+            animate={{ y: [0, -10, 0] }}
             transition={{
-              duration: 5,
+              duration: 7,
               repeat: Infinity,
               delay: index * 0.5,
               ease: "easeInOut",
@@ -65,29 +68,11 @@ export default function FloatingPanels() {
 
             <div className="mt-12 space-y-4">
               <div className="h-3 rounded-full bg-white/10">
-                <motion.div
-                  animate={{
-                    width: ["20%", "90%", "60%"],
-                  }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                  }}
-                  className="h-3 rounded-full bg-cyan-400"
-                />
+                <div className="h-3 w-[80%] rounded-full bg-cyan-400" />
               </div>
 
               <div className="h-3 rounded-full bg-white/10">
-                <motion.div
-                  animate={{
-                    width: ["60%", "30%", "80%"],
-                  }}
-                  transition={{
-                    duration: 5,
-                    repeat: Infinity,
-                  }}
-                  className="h-3 rounded-full bg-blue-500"
-                />
+                <div className="h-3 w-[60%] rounded-full bg-blue-500" />
               </div>
             </div>
           </motion.div>
