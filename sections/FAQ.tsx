@@ -1,23 +1,19 @@
-const faq = [
+const faqs = [
   {
-    question: "How long does a project take?",
-    answer:
-      "Most company websites are completed within 1–3 weeks depending on scope.",
+    q: "How long does a project take?",
+    a: "Most company websites take 1-3 weeks. Larger SaaS, dashboard or mobile systems are planned individually.",
   },
   {
-    question: "Do you build SaaS platforms?",
-    answer:
-      "Yes. 2LLSOFT develops scalable SaaS systems with dashboards and APIs.",
+    q: "Do you build mobile apps?",
+    a: "Yes. 2LLSOFT builds cross-platform mobile applications with Flutter and scalable backend systems.",
   },
   {
-    question: "Can you manage hosting and deployment?",
-    answer:
-      "Yes. We handle deployment, infrastructure and production optimization.",
+    q: "Can you build dashboards and admin panels?",
+    a: "Yes. We build modern dashboards, CRM systems, analytics panels and custom business tools.",
   },
   {
-    question: "Do you provide support after launch?",
-    answer:
-      "Yes. Maintenance, monitoring and future upgrades are available.",
+    q: "Do you provide long-term support?",
+    a: "Yes. Maintenance, updates, monitoring and technical support can be included depending on the project.",
   },
 ];
 
@@ -28,23 +24,18 @@ export default function FAQ() {
         FAQ
       </p>
 
-      <h2 className="mt-4 text-4xl font-black md:text-6xl">
-        Frequently asked questions.
+      <h2 className="mt-5 max-w-5xl text-4xl font-black leading-tight md:text-7xl">
+        Questions before starting a project?
       </h2>
 
-      <div className="mt-14 space-y-6">
-        {faq.map((item) => (
+      <div className="mt-16 grid gap-5">
+        {faqs.map((item) => (
           <div
-            key={item.question}
-            className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 transition duration-300 hover:border-cyan-400/40 hover:bg-cyan-400/10"
+            key={item.q}
+            className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8"
           >
-            <h3 className="text-2xl font-bold">
-              {item.question}
-            </h3>
-
-            <p className="mt-4 leading-relaxed text-zinc-400">
-              {item.answer}
-            </p>
+            <h3 className="text-2xl font-black">{item.q}</h3>
+            <p className="mt-4 leading-8 text-zinc-400">{item.a}</p>
           </div>
         ))}
       </div>
