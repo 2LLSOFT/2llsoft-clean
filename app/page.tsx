@@ -34,6 +34,7 @@ import CaseStudies from "@/sections/CaseStudies";
 import LiveFeed from "@/sections/LiveFeed";
 import TrustedBy from "@/sections/TrustedBy";
 import AdvancedStats from "@/sections/AdvancedStats";
+import VisualGrid from "@/sections/VisualGrid";
 
 export default function Home() {
   return (
@@ -68,6 +69,7 @@ export default function Home() {
       <FadeIn><WhyUs /></FadeIn>
       <FadeIn><Process /></FadeIn>
       <FadeIn><Technologies /></FadeIn>
+      <FadeIn><VisualGrid /></FadeIn>
       <FadeIn><Pricing /></FadeIn>
       <FadeIn><CTA /></FadeIn>
       <FadeIn><Testimonials /></FadeIn>
