@@ -24,6 +24,7 @@ import Contact from "@/sections/Contact";
 import CustomCursor from "@/components/CustomCursor";
 import ClickEffects from "@/components/ClickEffects";
 import ScrollProgress from "@/components/ScrollProgress";
+import BackToTop from "@/components/BackToTop";
 
 export default function Home() {
   return (
@@ -32,6 +33,7 @@ export default function Home() {
       <ScrollProgress />
       <CustomCursor />
       <ClickEffects />
+      <BackToTop />
 
       <Navbar />
       <Hero />
