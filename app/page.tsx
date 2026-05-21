@@ -25,6 +25,7 @@ import CustomCursor from "@/components/CustomCursor";
 import ClickEffects from "@/components/ClickEffects";
 import ScrollProgress from "@/components/ScrollProgress";
 import BackToTop from "@/components/BackToTop";
+import InstagramButton from "@/components/InstagramButton";
 
 export default function Home() {
   return (
@@ -34,6 +35,7 @@ export default function Home() {
       <CustomCursor />
       <ClickEffects />
       <BackToTop />
+      <InstagramButton />
 
       <Navbar />
       <Hero />
