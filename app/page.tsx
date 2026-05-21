@@ -35,7 +35,7 @@ import LiveFeed from "@/sections/LiveFeed";
 import TrustedBy from "@/sections/TrustedBy";
 import AdvancedStats from "@/sections/AdvancedStats";
 import VisualGrid from "@/sections/VisualGrid";
-
+import FinalCTA from "@/sections/FinalCTA";
 export default function Home() {
   return (
     <main className="relative overflow-hidden bg-[#030303]">
@@ -76,6 +76,7 @@ export default function Home() {
       <FadeIn><FAQ /></FadeIn>
       <FadeIn><Location /></FadeIn>
       <FadeIn><Support /></FadeIn>
+      <FadeIn><FinalCTA /></FadeIn>
       <FadeIn><Contact /></FadeIn>
 
       <Footer />
