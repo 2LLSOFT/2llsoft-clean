@@ -1,6 +1,6 @@
 "use client";
 
-import { useLanguage } from "@/lib/language-store";
+import { useLanguage } from "@/components/LanguageProvider";
 import type { Language } from "@/lib/translations";
 
 const languages: { code: Language; label: string; flag: string }[] = [

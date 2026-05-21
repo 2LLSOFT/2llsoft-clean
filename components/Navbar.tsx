@@ -2,7 +2,7 @@
 
 import AnimatedLogo from "@/components/AnimatedLogo";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
-import { useLanguage } from "@/lib/language-store";
+import { useLanguage } from "@/components/LanguageProvider";
 import SearchButton from "@/components/SearchButton";
 
 export default function Navbar() {

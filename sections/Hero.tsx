@@ -1,8 +1,10 @@
 "use client";
 
+"use client";
+
 import { motion } from "framer-motion";
 import MagneticButton from "@/components/MagneticButton";
-import { useLanguage } from "@/lib/language-store";
+import { useLanguage } from "@/components/LanguageProvider";
 
 export default function Hero() {
   const { t } = useLanguage();

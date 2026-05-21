@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useLanguage } from "@/lib/language-store";
+import { useLanguage } from "@/components/LanguageProvider";
 
 export default function Contact() {
   const { t } = useLanguage();

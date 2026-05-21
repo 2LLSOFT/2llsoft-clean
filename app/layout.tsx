@@ -1,30 +1,30 @@
 import type { Metadata } from "next";
-import { Analytics } from "@vercel/analytics/react";
-
-import WhatsAppButton from "@/components/WhatsAppButton";
+import { Inter } from "next/font/google";
 
 import "./globals.css";
 
+import { LanguageProvider } from "@/components/LanguageProvider";
+
+const inter = Inter({
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
-  title: "2LLSOFT | Modern Software Solutions",
-  description:
-    "2LLSOFT builds premium web platforms, mobile applications, cloud systems and AI-powered software products.",
-  icons: {
-    icon: "/logo/mark.svg",
-  },
+  title: "2LLSOFT",
+  description: "Premium software engineering company",
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="en">
-      <body>
-        {children}
-        <WhatsAppButton />
-        <Analytics />
+      <body className={inter.className}>
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );
