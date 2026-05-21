@@ -33,6 +33,7 @@ import FloatingPanels from "@/sections/FloatingPanels";
 import DashboardPreview from "@/sections/DashboardPreview";
 import MobileAppPreview from "@/sections/MobileAppPreview";
 import CaseStudies from "@/sections/CaseStudies";
+import LiveFeed from "@/sections/LiveFeed";
 
 export default function Home() {
   return (
@@ -55,6 +56,7 @@ export default function Home() {
       <FadeIn><CaseStudies /></FadeIn>
       <FadeIn><ProductShowcase /></FadeIn>
       <FadeIn><FloatingPanels /></FadeIn>
+      <FadeIn><LiveFeed /></FadeIn>
       <FadeIn><DashboardPreview /></FadeIn>
       <FadeIn><MobileAppPreview /></FadeIn>
       <FadeIn><Trust /></FadeIn>
