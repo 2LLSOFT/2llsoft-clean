@@ -33,6 +33,8 @@ import DashboardPreview from "@/sections/DashboardPreview";
 import MobileAppPreview from "@/sections/MobileAppPreview";
 import CaseStudies from "@/sections/CaseStudies";
 import LiveFeed from "@/sections/LiveFeed";
+import TrustedBy from "@/sections/TrustedBy";
+import AdvancedStats from "@/sections/AdvancedStats";
 
 export default function Home() {
   return (
@@ -47,6 +49,7 @@ export default function Home() {
       <Hero />
 
       <FadeIn><Marquee /></FadeIn>
+      <FadeIn><TrustedBy /></FadeIn>
       <FadeIn><BrandShowcase /></FadeIn>
       <FadeIn><Services /></FadeIn>
       <FadeIn><Features /></FadeIn>
@@ -59,6 +62,7 @@ export default function Home() {
       <FadeIn><MobileAppPreview /></FadeIn>
       <FadeIn><Trust /></FadeIn>
       <FadeIn><About /></FadeIn>
+      <FadeIn><AdvancedStats /></FadeIn>
       <FadeIn><Stats /></FadeIn>
       <FadeIn><Numbers /></FadeIn>
       <FadeIn><WhyUs /></FadeIn>
