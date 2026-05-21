@@ -30,6 +30,7 @@ import Location from "@/sections/Location";
 import Support from "@/sections/Support";
 import ProductShowcase from "@/sections/ProductShowcase";
 import FloatingPanels from "@/sections/FloatingPanels";
+import DashboardPreview from "@/sections/DashboardPreview";
 
 export default function Home() {
   return (
@@ -51,6 +52,7 @@ export default function Home() {
       <FadeIn><Projects /></FadeIn>
       <FadeIn><ProductShowcase /></FadeIn>
       <FadeIn><FloatingPanels /></FadeIn>
+      <FadeIn><DashboardPreview /></FadeIn>
       <FadeIn><Trust /></FadeIn>
       <FadeIn><About /></FadeIn>
       <FadeIn><Stats /></FadeIn>
