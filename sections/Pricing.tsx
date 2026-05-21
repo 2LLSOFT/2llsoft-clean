@@ -54,7 +54,7 @@ export default function Pricing() {
             className={
               index === 1
                 ? "rounded-[2rem] border border-cyan-400/40 bg-cyan-400/10 p-10"
-                : "rounded-[2rem] border border-white/10 bg-white/[0.04] p-10"
+                : "rounded-[2rem] border border-white/10 glass-card glass-hover p-10"
             }
           >
             <p className="text-sm uppercase tracking-[0.3em] text-cyan-400">

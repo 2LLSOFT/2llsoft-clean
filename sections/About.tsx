@@ -37,7 +37,7 @@ export default function About() {
             {values.map((value) => (
               <div
                 key={value}
-                className="rounded-2xl border border-white/10 bg-white/[0.04] p-5 text-zinc-300"
+                className="glass-card glass-hover rounded-[2rem] p-8"
               >
                 ✓ {value}
               </div>

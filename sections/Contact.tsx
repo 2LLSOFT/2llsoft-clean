@@ -97,7 +97,7 @@ export default function Contact() {
             <p>Working Hours: Mon - Fri / 09:00 - 18:00</p>
           </div>
 
-          <div className="mt-10 rounded-[2rem] border border-white/10 bg-black/30 p-6">
+          <div className="glass-card glass-hover rounded-[2rem] p-8">
             <p className="text-sm uppercase tracking-[0.3em] text-cyan-400">
               Response Time
             </p>

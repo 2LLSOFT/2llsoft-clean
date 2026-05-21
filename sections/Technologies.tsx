@@ -28,7 +28,7 @@ export default function Technologies() {
         {technologies.map((tech, index) => (
           <div
             key={tech}
-            className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 transition duration-300 hover:-translate-y-2 hover:border-cyan-400/40 hover:bg-cyan-400/10"
+            className="glass-card glass-hover rounded-[2rem] p-8"
           >
             <div className="absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100">
               <div className="absolute left-1/2 top-1/2 h-[200px] w-[200px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-400/10 blur-[80px]" />

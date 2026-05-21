@@ -40,7 +40,7 @@ export default function Services() {
         {services.map((service, index) => (
           <div
             key={service.title}
-            className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 transition duration-300 hover:-translate-y-2 hover:border-cyan-400/40 hover:bg-cyan-400/10"
+           className="glass-card glass-hover rounded-[2rem] p-8"
           >
             <div className="text-sm text-cyan-400">
               0{index + 1}

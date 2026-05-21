@@ -37,7 +37,7 @@ export default function Projects() {
         {projects.map((project, index) => (
           <div
             key={project.name}
-            className="group overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] transition duration-300 hover:-translate-y-2 hover:border-cyan-400/40 hover:bg-cyan-400/10"
+            className="glass-card glass-hover rounded-[2rem] p-8"
           >
             <div className="relative h-[280px] overflow-hidden bg-[#050505] p-6">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#22d3ee33,transparent_45%)]" />
