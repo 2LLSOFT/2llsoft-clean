@@ -38,6 +38,7 @@ import VisualGrid from "@/sections/VisualGrid";
 import FinalCTA from "@/sections/FinalCTA";
 import TerminalPreview from "@/sections/TerminalPreview";
 import PortfolioMockups from "@/sections/PortfolioMockups";
+import SystemMetrics from "@/sections/SystemMetrics";
 
 export default function Home() {
   return (
@@ -75,6 +76,7 @@ export default function Home() {
       <FadeIn><Technologies /></FadeIn>
       <FadeIn><VisualGrid /></FadeIn>
       <FadeIn><TerminalPreview /></FadeIn>
+       <FadeIn><SystemMetrics /></FadeIn>
       <FadeIn><Pricing /></FadeIn>
       <FadeIn><CTA /></FadeIn>
       <FadeIn><Testimonials /></FadeIn>
