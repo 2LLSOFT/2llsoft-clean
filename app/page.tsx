@@ -28,6 +28,7 @@ import BackToTop from "@/components/BackToTop";
 import InstagramButton from "@/components/InstagramButton";
 import Location from "@/sections/Location";
 import Support from "@/sections/Support";
+import ProductShowcase from "@/sections/ProductShowcase";
 
 export default function Home() {
   return (
@@ -47,6 +48,7 @@ export default function Home() {
       <FadeIn><Services /></FadeIn>
       <FadeIn><Features /></FadeIn>
       <FadeIn><Projects /></FadeIn>
+      <FadeIn><ProductShowcase /></FadeIn>
       <FadeIn><Trust /></FadeIn>
       <FadeIn><About /></FadeIn>
       <FadeIn><Stats /></FadeIn>
