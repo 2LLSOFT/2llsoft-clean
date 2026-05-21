@@ -78,6 +78,37 @@ export default function Contact() {
               {t.contactButton}
             </button>
           </form>
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+  <div className="rounded-[2rem] border border-white/10 bg-black/30 p-5">
+    <p className="text-sm text-zinc-500">
+      {isTR ? "E-posta" : "Email"}
+    </p>
+
+    <p className="mt-3 font-semibold text-cyan-300">
+      info@2llsoft.com
+    </p>
+  </div>
+
+  <div className="rounded-[2rem] border border-white/10 bg-black/30 p-5">
+    <p className="text-sm text-zinc-500">
+      {isTR ? "Telefon" : "Phone"}
+    </p>
+
+    <p className="mt-3 font-semibold text-cyan-300">
+      +48 507 275 668
+    </p>
+  </div>
+
+  <div className="rounded-[2rem] border border-white/10 bg-black/30 p-5">
+    <p className="text-sm text-zinc-500">
+      {isTR ? "Konum" : "Location"}
+    </p>
+
+    <p className="mt-3 font-semibold text-cyan-300">
+      Słupsk, Poland
+    </p>
+  </div>
+</div>
 
           {status && <p className="mt-6 text-sm text-cyan-400">{status}</p>}
         </div>

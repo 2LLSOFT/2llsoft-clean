@@ -111,3 +111,16 @@ button:active {
     transition-duration: 0.001ms !important;
   }
 }
+.glass-card {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+html,
+body {
+  overflow-x: hidden;
+}
