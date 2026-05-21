@@ -26,6 +26,7 @@ import ClickEffects from "@/components/ClickEffects";
 import ScrollProgress from "@/components/ScrollProgress";
 import BackToTop from "@/components/BackToTop";
 import InstagramButton from "@/components/InstagramButton";
+import Location from "@/sections/Location";
 
 export default function Home() {
   return (
@@ -56,6 +57,7 @@ export default function Home() {
       <FadeIn><CTA /></FadeIn>
       <FadeIn><Testimonials /></FadeIn>
       <FadeIn><FAQ /></FadeIn>
+      <FadeIn><Location /></FadeIn>
       <FadeIn><Contact /></FadeIn>
 
       <Footer />
