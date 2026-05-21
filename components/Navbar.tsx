@@ -1,5 +1,6 @@
 "use client";
 
+import AnimatedLogo from "@/components/AnimatedLogo";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { useLanguage } from "@/lib/language-store";
 
@@ -9,14 +10,8 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 z-[100] w-full border-b border-white/10 bg-black/30 backdrop-blur-2xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 text-white md:px-10">
-        <a href="/" className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-400 font-black text-black">
-            2L
-          </div>
-
-          <span className="text-xl font-black tracking-[0.3em] md:text-2xl">
-            2LLSOFT
-          </span>
+        <a href="/">
+          <AnimatedLogo />
         </a>
 
         <nav className="hidden items-center gap-8 text-sm text-zinc-300 md:flex">
