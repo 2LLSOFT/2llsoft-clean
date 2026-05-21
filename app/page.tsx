@@ -35,11 +35,13 @@ import CaseStudies from "@/sections/CaseStudies";
 import LiveFeed from "@/sections/LiveFeed";
 import TrustedBy from "@/sections/TrustedBy";
 import AdvancedStats from "@/sections/AdvancedStats";
+import FloatingOrbs from "@/components/FloatingOrbs";
 
 export default function Home() {
   return (
     <main className="relative overflow-hidden bg-[#030303]">
       <SpaceBackground />
+      <FloatingOrbs />
       <ScrollProgress />
       <ClickEffects />
       <BackToTop />
