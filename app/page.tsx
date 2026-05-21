@@ -36,6 +36,7 @@ import TrustedBy from "@/sections/TrustedBy";
 import AdvancedStats from "@/sections/AdvancedStats";
 import VisualGrid from "@/sections/VisualGrid";
 import FinalCTA from "@/sections/FinalCTA";
+import TerminalPreview from "@/sections/TerminalPreview";
 export default function Home() {
   return (
     <main className="relative overflow-hidden bg-[#030303]">
@@ -70,6 +71,7 @@ export default function Home() {
       <FadeIn><Process /></FadeIn>
       <FadeIn><Technologies /></FadeIn>
       <FadeIn><VisualGrid /></FadeIn>
+      <FadeIn><TerminalPreview /></FadeIn>
       <FadeIn><Pricing /></FadeIn>
       <FadeIn><CTA /></FadeIn>
       <FadeIn><Testimonials /></FadeIn>
