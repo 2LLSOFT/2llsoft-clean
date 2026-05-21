@@ -1,51 +1,57 @@
-const testimonials = [
-  {
-    name: "Michael Ross",
-    role: "Startup Founder",
-    text: "2LLSOFT delivered a clean and scalable SaaS platform faster than expected.",
-  },
-  {
-    name: "Sarah Chen",
-    role: "Product Manager",
-    text: "The UI quality and engineering structure were production-level from day one.",
-  },
-  {
-    name: "David Miller",
-    role: "Business Owner",
-    text: "Professional communication, modern design and solid backend systems.",
-  },
-];
+"use client";
+
+import { useLanguage } from "@/components/LanguageProvider";
 
 export default function Testimonials() {
+  const { language } = useLanguage();
+  const isTR = language === "tr";
+
+  const testimonials = [
+    {
+      quote: isTR
+        ? "2LLSOFT, projemizi modern ve güçlü bir dijital ürüne dönüştürdü."
+        : "2LLSOFT transformed our project into a modern and powerful digital product.",
+      name: "NovaTech",
+    },
+    {
+      quote: isTR
+        ? "Dashboard ve backend sistemi beklentimizin üstünde oldu."
+        : "The dashboard and backend system exceeded our expectations.",
+      name: "Skyline AI",
+    },
+    {
+      quote: isTR
+        ? "Temiz tasarım, hızlı teslimat ve güçlü teknik yaklaşım."
+        : "Clean design, fast delivery and strong technical approach.",
+      name: "CloudForge",
+    },
+  ];
+
   return (
     <section className="bg-[#030303] px-6 py-24 text-white md:px-20">
       <p className="text-xs uppercase tracking-[0.5em] text-cyan-400">
-        Testimonials
+        {isTR ? "Müşteri Yorumları" : "Testimonials"}
       </p>
 
-      <h2 className="mt-4 text-4xl font-black md:text-6xl">
-        Trusted by modern businesses.
+      <h2 className="mt-5 max-w-5xl text-4xl font-black leading-tight md:text-7xl">
+        {isTR
+          ? "Modern şirketler için güven veren yazılım deneyimi."
+          : "Software experience trusted by modern companies."}
       </h2>
 
-      <div className="mt-14 grid gap-6 md:grid-cols-3">
+      <div className="mt-16 grid gap-8 md:grid-cols-3">
         {testimonials.map((item) => (
           <div
             key={item.name}
-            className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 transition duration-300 hover:-translate-y-2 hover:border-cyan-400/40 hover:bg-cyan-400/10"
+            className="glass-card glass-hover rounded-[2rem] p-8"
           >
-            <p className="leading-relaxed text-zinc-300">
-              "{item.text}"
+            <p className="text-xl leading-9 text-zinc-300">
+              “{item.quote}”
             </p>
 
-            <div className="mt-8">
-              <h3 className="text-xl font-bold">
-                {item.name}
-              </h3>
-
-              <p className="mt-2 text-zinc-500">
-                {item.role}
-              </p>
-            </div>
+            <p className="mt-8 font-bold text-cyan-400">
+              {item.name}
+            </p>
           </div>
         ))}
       </div>
