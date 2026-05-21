@@ -27,6 +27,7 @@ import ScrollProgress from "@/components/ScrollProgress";
 import BackToTop from "@/components/BackToTop";
 import InstagramButton from "@/components/InstagramButton";
 import Location from "@/sections/Location";
+import Support from "@/sections/Support";
 
 export default function Home() {
   return (
@@ -58,6 +59,7 @@ export default function Home() {
       <FadeIn><Testimonials /></FadeIn>
       <FadeIn><FAQ /></FadeIn>
       <FadeIn><Location /></FadeIn>
+      <FadeIn><Support /></FadeIn>
       <FadeIn><Contact /></FadeIn>
 
       <Footer />
