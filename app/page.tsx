@@ -31,6 +31,7 @@ import Support from "@/sections/Support";
 import ProductShowcase from "@/sections/ProductShowcase";
 import FloatingPanels from "@/sections/FloatingPanels";
 import DashboardPreview from "@/sections/DashboardPreview";
+import MobileAppPreview from "@/sections/MobileAppPreview";
 
 export default function Home() {
   return (
