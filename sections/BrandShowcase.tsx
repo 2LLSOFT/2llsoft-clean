@@ -1,3 +1,7 @@
+"use client";
+
+import { useLanguage } from "@/components/LanguageProvider";
+
 function LogoMark() {
   return (
     <svg
@@ -15,21 +19,27 @@ function LogoMark() {
 }
 
 export default function BrandShowcase() {
+  const { language } = useLanguage();
+  const isTR = language === "tr";
+
   return (
     <section className="bg-[#030303] px-6 py-24 text-white md:px-20">
       <div className="grid gap-10 rounded-[3rem] border border-white/10 bg-white/[0.04] p-10 md:grid-cols-2 md:p-16">
         <div>
           <p className="text-xs uppercase tracking-[0.5em] text-cyan-400">
-            Brand System
+            {isTR ? "Marka Sistemi" : "Brand System"}
           </p>
 
           <h2 className="mt-6 text-4xl font-black leading-tight md:text-6xl">
-            Minimal identity for premium software engineering.
+            {isTR
+              ? "Premium yazılım mühendisliği için minimal kimlik."
+              : "Minimal identity for premium software engineering."}
           </h2>
 
           <p className="mt-8 leading-8 text-zinc-400">
-            2LLSOFT uses a clean, cinematic and technical visual language built
-            around dark interfaces, sharp typography and cyan system accents.
+            {isTR
+              ? "2LLSOFT; koyu arayüzler, keskin tipografi ve cyan sistem vurguları üzerine kurulu temiz, sinematik ve teknik bir görsel dil kullanır."
+              : "2LLSOFT uses a clean, cinematic and technical visual language built around dark interfaces, sharp typography and cyan system accents."}
           </p>
         </div>
 
