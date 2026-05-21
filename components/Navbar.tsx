@@ -3,6 +3,7 @@
 import AnimatedLogo from "@/components/AnimatedLogo";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { useLanguage } from "@/lib/language-store";
+import SearchButton from "@/components/SearchButton";
 
 export default function Navbar() {
   const { t } = useLanguage();
@@ -30,7 +31,9 @@ export default function Navbar() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <LanguageSwitcher />
+  <SearchButton />
+
+  <LanguageSwitcher />
 
           <a
             href="#contact"
