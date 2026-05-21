@@ -1,4 +1,11 @@
+"use client";
+
+import { useLanguage } from "@/components/LanguageProvider";
+
 export default function TerminalPreview() {
+  const { language } = useLanguage();
+  const isTR = language === "tr";
+
   return (
     <section className="bg-[#030303] px-6 py-24 text-white md:px-20">
       <div className="overflow-hidden rounded-[3rem] border border-white/10 bg-black shadow-[0_0_80px_rgba(34,211,238,0.08)]">
@@ -14,27 +21,39 @@ export default function TerminalPreview() {
 
         <div className="space-y-4 p-8 font-mono text-sm md:text-base">
           <p className="text-cyan-400">
-            $ initializing enterprise systems...
+            {isTR
+              ? "$ enterprise sistemleri başlatılıyor..."
+              : "$ initializing enterprise systems..."}
           </p>
 
           <p className="text-zinc-400">
-            ✓ cloud infrastructure connected
+            {isTR
+              ? "✓ cloud altyapısı bağlandı"
+              : "✓ cloud infrastructure connected"}
           </p>
 
           <p className="text-zinc-400">
-            ✓ AI modules synchronized
+            {isTR
+              ? "✓ AI modülleri senkronize edildi"
+              : "✓ AI modules synchronized"}
           </p>
 
           <p className="text-zinc-400">
-            ✓ dashboard analytics running
+            {isTR
+              ? "✓ dashboard analytics çalışıyor"
+              : "✓ dashboard analytics running"}
           </p>
 
           <p className="text-zinc-400">
-            ✓ mobile platform deployed
+            {isTR
+              ? "✓ mobil platform deploy edildi"
+              : "✓ mobile platform deployed"}
           </p>
 
           <p className="text-cyan-300">
-            status: production ready
+            {isTR
+              ? "durum: production hazır"
+              : "status: production ready"}
           </p>
         </div>
       </div>
