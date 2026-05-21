@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-const stars = Array.from({ length: 30 });
+const stars = Array.from({ length: 18 });
 
 export default function SpaceBackground() {
   return (
@@ -48,7 +48,7 @@ export default function SpaceBackground() {
           opacity: [0, 1, 0],
         }}
         transition={{
-          duration: 2,
+          duration: 6,
           repeat: Infinity,
           repeatDelay: 5,
         }}
@@ -77,9 +77,9 @@ export default function SpaceBackground() {
       />
 
       {/* Nebula Glow */}
-      <div className="absolute left-[-200px] top-[-200px] h-[600px] w-[600px] rounded-full bg-cyan-500/10 blur-[140px]" />
+      <div className="absolute left-[-200px] top-[-200px] h-[600px] w-[600px] rounded-full bg-cyan-500/10 blur-[60px]" />
 
-      <div className="absolute bottom-[-200px] right-[-200px] h-[600px] w-[600px] rounded-full bg-blue-700/10 blur-[140px]" />
+      <div className="absolute bottom-[-200px] right-[-200px] h-[600px] w-[600px] rounded-full bg-blue-700/10 blur-[60px]" />
     </div>
   );
 }

@@ -24,7 +24,7 @@ export default function DashboardPreview() {
 
         <motion.div
           animate={{ y: [0, -10, 0] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
           className="glass-card mt-16 overflow-hidden rounded-[3rem] p-6"
         >
           <div className="rounded-[2rem] border border-white/10 bg-black/70 p-6">
@@ -75,7 +75,7 @@ export default function DashboardPreview() {
                           height: [`${height}%`, `${height + 10}%`, `${height}%`],
                         }}
                         transition={{
-                          duration: 3,
+                          duration: 8,
                           repeat: Infinity,
                           delay: index * 0.12,
                         }}

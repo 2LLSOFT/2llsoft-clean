@@ -1,7 +1,5 @@
 "use client";
 
-"use client";
-
 import { motion } from "framer-motion";
 import MagneticButton from "@/components/MagneticButton";
 import { useLanguage } from "@/components/LanguageProvider";
@@ -22,7 +20,7 @@ export default function Hero() {
         <div className="relative">
           <motion.div
             animate={{ scale: [1, 1.6, 2], opacity: [0.7, 0.4, 0] }}
-            transition={{ duration: 1.4, repeat: Infinity }}
+            transition={{ duration: 3.4, repeat: Infinity }}
             className="absolute left-1/2 top-[320px] h-[260px] w-[260px] -translate-x-1/2 rounded-full bg-white/20 blur-[80px]"
           />
 

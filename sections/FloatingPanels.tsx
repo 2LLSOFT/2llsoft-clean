@@ -45,7 +45,7 @@ export default function FloatingPanels() {
             key={panel.title}
             animate={{ y: [0, -10, 0] }}
             transition={{
-              duration: 7,
+              duration: 9,
               repeat: Infinity,
               delay: index * 0.5,
               ease: "easeInOut",
