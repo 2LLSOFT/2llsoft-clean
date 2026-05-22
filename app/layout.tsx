@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: "2LLSOFT | Premium Software Engineering",
     description:
       "Modern software engineering for scalable digital products.",
-    images: ["/og.jpg"],
+    images: ["/og.svg"],
   },
 };
 
