@@ -12,45 +12,37 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://2llsoft.com"),
+
   title: "2LLSOFT | Premium Software Engineering",
   description:
-    "2LLSOFT is a premium software company based in Słupsk, Poland. We build web platforms, mobile apps, dashboards, cloud systems and AI-powered digital products.",
-  keywords: [
-    "2LLSOFT",
-    "software company Poland",
-    "web development",
-    "mobile app development",
-    "SaaS development",
-    "AI software",
-    "Next.js",
-    "Flutter",
-    "dashboard development",
-  ],
+    "2LLSOFT builds premium web platforms, mobile apps, cloud systems and AI-powered software products.",
   icons: {
     icon: "/logo/mark.svg",
+  },
   openGraph: {
-  title: "2LLSOFT | Premium Software Engineering",
-  description:
-    "Premium web, mobile, cloud and AI-powered software systems for modern companies.",
-  url: "https://2llsoft.com",
-  siteName: "2LLSOFT",
-  images: ["/og.jpg"],
-  type: "website",
-},
+    title: "2LLSOFT | Premium Software Engineering",
+    description:
+      "Premium web, mobile, cloud and AI-powered software systems for modern companies.",
+    url: "https://2llsoft.com",
+    siteName: "2LLSOFT",
+    images: ["/og.jpg"],
+    type: "website",
+  },
   twitter: {
     card: "summary_large_image",
     title: "2LLSOFT | Premium Software Engineering",
     description:
       "Modern software engineering for scalable digital products.",
-      images: ["/og.jpg"],
+    images: ["/og.jpg"],
   },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body className={inter.className}>

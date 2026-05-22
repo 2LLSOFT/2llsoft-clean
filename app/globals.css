@@ -75,53 +75,13 @@ a {
   background: rgba(255, 255, 255, 0.05);
 }
 
-.noise {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.03;
-  background-image:
-    radial-gradient(circle at 20% 20%, white 1px, transparent 1px),
-    radial-gradient(circle at 80% 40%, white 1px, transparent 1px),
-    radial-gradient(circle at 40% 80%, white 1px, transparent 1px);
-  background-size: 180px 180px;
-}
-
-.gradient-border {
-  position: relative;
-  overflow: hidden;
-}
-
-.gradient-border::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  padding: 1px;
-  border-radius: inherit;
-  background: linear-gradient(
-    135deg,
-    rgba(34, 211, 238, 0.4),
-    rgba(255, 255, 255, 0.08)
-  );
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-}
-
-.hero-glow {
-  position: absolute;
-  inset: auto;
-  width: 600px;
-  height: 600px;
-  border-radius: 999px;
-  background: rgba(34, 211, 238, 0.12);
-  filter: blur(120px);
-  pointer-events: none;
-}
-
-.section-spacing {
-  padding-top: 120px;
-  padding-bottom: 120px;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
 }
