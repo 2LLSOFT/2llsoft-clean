@@ -69,6 +69,9 @@ export default function Footer() {
         <p>
           © 2026 2LLSOFT. {isTR ? "Tüm hakları saklıdır." : "All rights reserved."}
         </p>
+        <p className="mt-6 text-sm text-zinc-500">
+  Next.js • TypeScript • AI Systems • Cloud Infrastructure
+</p>
 
         <p>
           {isTR

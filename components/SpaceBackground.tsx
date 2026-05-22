@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-const stars = Array.from({ length: 12 });
+const stars = Array.from({ length: 10 });
 
 export default function SpaceBackground() {
   return (

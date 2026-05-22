@@ -28,20 +28,21 @@ export const metadata: Metadata = {
   ],
   icons: {
     icon: "/logo/mark.svg",
-  },
   openGraph: {
-    title: "2LLSOFT | Premium Software Engineering",
-    description:
-      "Premium web, mobile, cloud and AI-powered software systems for modern companies.",
-    url: "https://2llsoft.com",
-    siteName: "2LLSOFT",
-    type: "website",
-  },
+  title: "2LLSOFT | Premium Software Engineering",
+  description:
+    "Premium web, mobile, cloud and AI-powered software systems for modern companies.",
+  url: "https://2llsoft.com",
+  siteName: "2LLSOFT",
+  images: ["/og.jpg"],
+  type: "website",
+},
   twitter: {
     card: "summary_large_image",
     title: "2LLSOFT | Premium Software Engineering",
     description:
       "Modern software engineering for scalable digital products.",
+      images: ["/og.jpg"],
   },
 };
 
