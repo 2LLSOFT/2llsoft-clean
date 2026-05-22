@@ -35,7 +35,18 @@ export default function PortfolioMockups() {
                     <div className="h-28 rounded-2xl bg-white/10" />
                     <div className="h-28 rounded-2xl bg-blue-500/30" />
                   </div>
-                  <div className="h-48 rounded-2xl bg-black/40" />
+                  <img
+  src={`/showcase/${
+    index === 0
+      ? "dashboard.jpg"
+      : index === 1
+      ? "mobile.jpg"
+      : index === 2
+      ? "analytics.jpg"
+      : "saas.jpg"
+  }`}
+  className="h-48 w-full rounded-2xl object-cover"
+/>
                 </div>
               </div>
 

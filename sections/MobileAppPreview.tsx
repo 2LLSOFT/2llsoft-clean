@@ -37,8 +37,10 @@ export default function MobileAppPreview() {
             <div className="rounded-[2.5rem] bg-black p-5">
               <div className="mx-auto mb-6 h-1.5 w-24 rounded-full bg-white/20" />
 
-              <div className="rounded-[2rem] bg-gradient-to-br from-cyan-400/20 to-blue-700/20 p-6">
-                <p className="text-sm text-cyan-300">2LLSOFT App</p>
+<img
+  src="/showcase/mobile.jpg"
+  className="mt-6 h-64 w-full rounded-2xl object-cover"
+/>                <p className="text-sm text-cyan-300">2LLSOFT App</p>
 
                 <h3 className="mt-4 text-3xl font-black">
                   {isTR ? "Mobil Dashboard" : "Mobile Dashboard"}

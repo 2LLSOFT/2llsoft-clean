@@ -67,7 +67,10 @@ export default function CaseStudies() {
                 <span className="h-3 w-3 rounded-full bg-green-400" />
               </div>
 
-              <div className="grid gap-5 md:grid-cols-3">
+              <img
+  src="/showcase/dashboard.jpg"
+  className="h-40 w-full rounded-2xl object-cover"
+/>
                 <div className="h-40 rounded-2xl bg-cyan-400/20" />
                 <div className="h-40 rounded-2xl bg-white/10" />
                 <div className="h-40 rounded-2xl bg-blue-500/20" />
