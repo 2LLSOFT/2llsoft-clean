@@ -24,7 +24,7 @@ export default function Navbar() {
           <AnimatedLogo />
         </a>
 
-        <nav className="hidden items-center gap-8 text-sm text-zinc-300 lg:flex">
+        <nav className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/40 backdrop-blur-xl">
           {links.map((item) => (
             <a key={item.href} href={item.href} className="transition hover:text-cyan-300">
               {item.label}
