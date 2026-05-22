@@ -9,10 +9,11 @@ export default function CaseStudies() {
   const cases = [
     {
       title: isTR ? "SaaS Komuta Merkezi" : "SaaS Command Center",
-      type: isTR ? "Enterprise Dashboard" : "Enterprise Dashboard",
+      type: "Enterprise Dashboard",
       result: isTR
         ? "Gerçek zamanlı analytics, proje takibi ve operasyon kontrol sistemi."
         : "Real-time analytics, project tracking and operational control.",
+      image: "/showcase/dashboard.jpg",
     },
     {
       title: isTR ? "AI İş Akışı Motoru" : "AI Workflow Engine",
@@ -20,6 +21,7 @@ export default function CaseStudies() {
       result: isTR
         ? "AI destekli karar akışlarıyla otomatik müşteri süreçleri."
         : "Automated client processes with AI-assisted decision flows.",
+      image: "/showcase/analytics.jpg",
     },
     {
       title: isTR ? "Mobil Ticaret Paketi" : "Mobile Commerce Suite",
@@ -27,6 +29,7 @@ export default function CaseStudies() {
       result: isTR
         ? "Hızlı ürün keşfi, ödeme akışı ve iş yönetim dashboardu."
         : "Fast product discovery, checkout flow and business dashboard.",
+      image: "/showcase/mobile.jpg",
     },
   ];
 
@@ -60,7 +63,7 @@ export default function CaseStudies() {
               </p>
             </div>
 
-            <div className="rounded-[2rem] border border-white/10 bg-black/50 p-6">
+            <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-black/50 p-6">
               <div className="mb-6 flex gap-2">
                 <span className="h-3 w-3 rounded-full bg-red-400" />
                 <span className="h-3 w-3 rounded-full bg-yellow-400" />
@@ -68,13 +71,10 @@ export default function CaseStudies() {
               </div>
 
               <img
-  src="/showcase/dashboard.jpg"
-  className="h-40 w-full rounded-2xl object-cover"
-/>
-                <div className="h-40 rounded-2xl bg-cyan-400/20" />
-                <div className="h-40 rounded-2xl bg-white/10" />
-                <div className="h-40 rounded-2xl bg-blue-500/20" />
-              </div>
+                src={item.image}
+                alt={item.title}
+                className="h-64 w-full rounded-2xl object-cover"
+              />
 
               <div className="mt-6 h-20 rounded-2xl bg-white/10" />
             </div>

@@ -124,3 +124,17 @@ html,
 body {
   overflow-x: hidden;
 }
+html,
+body {
+  overflow-x: hidden;
+}
+
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.glass-card {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}

@@ -31,24 +31,31 @@ export default function MobileAppPreview() {
         <motion.div
           animate={{ y: [0, -12, 0] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          className="mx-auto w-full max-w-[360px]"
+          className="mx-auto w-full max-w-[380px]"
         >
           <div className="rounded-[3rem] border border-white/10 bg-zinc-900 p-4 shadow-[0_0_80px_rgba(34,211,238,0.2)]">
             <div className="rounded-[2.5rem] bg-black p-5">
               <div className="mx-auto mb-6 h-1.5 w-24 rounded-full bg-white/20" />
 
-<img
-  src="/showcase/mobile.jpg"
-  className="mt-6 h-64 w-full rounded-2xl object-cover"
-/>                <p className="text-sm text-cyan-300">2LLSOFT App</p>
+              <div className="rounded-[2rem] bg-gradient-to-br from-cyan-400/20 to-blue-700/20 p-6">
+                <p className="text-sm text-cyan-300">2LLSOFT App</p>
 
                 <h3 className="mt-4 text-3xl font-black">
                   {isTR ? "Mobil Dashboard" : "Mobile Dashboard"}
                 </h3>
 
-                <div className="mt-8 grid gap-4">
+                <img
+                  src="/showcase/mobile.jpg"
+                  alt="Mobile App Preview"
+                  className="mt-6 h-64 w-full rounded-2xl object-cover"
+                />
+
+                <div className="mt-6 grid gap-4">
                   <div className="rounded-2xl bg-black/40 p-5">
-                    <p className="text-zinc-500">{isTR ? "Gelir" : "Revenue"}</p>
+                    <p className="text-zinc-500">
+                      {isTR ? "Gelir" : "Revenue"}
+                    </p>
+
                     <h4 className="mt-2 text-3xl font-black text-cyan-400">
                       €12,480
                     </h4>
@@ -58,15 +65,10 @@ export default function MobileAppPreview() {
                     <p className="text-zinc-500">
                       {isTR ? "Aktif Kullanıcılar" : "Active Users"}
                     </p>
+
                     <h4 className="mt-2 text-3xl font-black text-cyan-400">
                       8.2K
                     </h4>
-                  </div>
-
-                  <div className="flex gap-3">
-                    <div className="h-20 flex-1 rounded-2xl bg-cyan-400/30" />
-                    <div className="h-20 flex-1 rounded-2xl bg-white/10" />
-                    <div className="h-20 flex-1 rounded-2xl bg-blue-500/30" />
                   </div>
                 </div>
               </div>

@@ -48,7 +48,7 @@ export default function Navbar() {
           onClick={() => setOpen(!open)}
           className="rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-sm font-bold text-white md:hidden"
         >
-          Menu
+          MENU
         </button>
       </div>
 
