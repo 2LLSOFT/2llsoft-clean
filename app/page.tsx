@@ -67,6 +67,7 @@ export default function Home() {
       <FadeIn><DashboardPreview /></FadeIn>
       <FadeIn><MobileAppPreview /></FadeIn>
       <FadeIn><Trust /></FadeIn>
+      <div className="h-6" />
       <FadeIn><About /></FadeIn>
       <FadeIn><AdvancedStats /></FadeIn>
       <FadeIn><Stats /></FadeIn>
