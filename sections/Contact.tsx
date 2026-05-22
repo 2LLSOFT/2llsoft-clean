@@ -4,13 +4,15 @@ import { useState } from "react";
 import { useLanguage } from "@/components/LanguageProvider";
 
 export default function Contact() {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
+  const isTR = language === "tr";
+
   const [status, setStatus] = useState("");
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    setStatus("Sending...");
+    setStatus(isTR ? "Gönderiliyor..." : "Sending...");
 
     const form = event.currentTarget;
     const formData = new FormData(form);
@@ -28,17 +30,17 @@ export default function Contact() {
     });
 
     if (response.ok) {
-      setStatus("Message saved successfully.");
+      setStatus(isTR ? "Mesaj başarıyla kaydedildi." : "Message saved successfully.");
       form.reset();
     } else {
-      setStatus("Message could not be saved.");
+      setStatus(isTR ? "Mesaj kaydedilemedi." : "Message could not be saved.");
     }
   }
 
   return (
     <section id="contact" className="bg-[#030303] px-6 py-24 text-white md:px-20">
       <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
-        <div className="rounded-[3rem] border border-white/10 bg-white/[0.04] p-10 backdrop-blur-2xl md:p-16">
+        <div className="glass-card glass-hover rounded-[3rem] p-10 backdrop-blur-2xl md:p-16">
           <p className="text-xs uppercase tracking-[0.5em] text-cyan-400">
             {t.contactBadge}
           </p>
@@ -78,44 +80,30 @@ export default function Contact() {
               {t.contactButton}
             </button>
           </form>
+
           <div className="mt-10 grid gap-5 md:grid-cols-3">
-  <div className="rounded-[2rem] border border-white/10 bg-black/30 p-5">
-    <p className="text-sm text-zinc-500">
-      {isTR ? "E-posta" : "Email"}
-    </p>
+            <div className="rounded-[2rem] border border-white/10 bg-black/30 p-5">
+              <p className="text-sm text-zinc-500">{isTR ? "E-posta" : "Email"}</p>
+              <p className="mt-3 font-semibold text-cyan-300">info@2llsoft.com</p>
+            </div>
 
-    <p className="mt-3 font-semibold text-cyan-300">
-      info@2llsoft.com
-    </p>
-  </div>
+            <div className="rounded-[2rem] border border-white/10 bg-black/30 p-5">
+              <p className="text-sm text-zinc-500">{isTR ? "Telefon" : "Phone"}</p>
+              <p className="mt-3 font-semibold text-cyan-300">+48 507 275 668</p>
+            </div>
 
-  <div className="rounded-[2rem] border border-white/10 bg-black/30 p-5">
-    <p className="text-sm text-zinc-500">
-      {isTR ? "Telefon" : "Phone"}
-    </p>
-
-    <p className="mt-3 font-semibold text-cyan-300">
-      +48 507 275 668
-    </p>
-  </div>
-
-  <div className="rounded-[2rem] border border-white/10 bg-black/30 p-5">
-    <p className="text-sm text-zinc-500">
-      {isTR ? "Konum" : "Location"}
-    </p>
-
-    <p className="mt-3 font-semibold text-cyan-300">
-      Słupsk, Poland
-    </p>
-  </div>
-</div>
+            <div className="rounded-[2rem] border border-white/10 bg-black/30 p-5">
+              <p className="text-sm text-zinc-500">{isTR ? "Konum" : "Location"}</p>
+              <p className="mt-3 font-semibold text-cyan-300">Słupsk, Poland</p>
+            </div>
+          </div>
 
           {status && <p className="mt-6 text-sm text-cyan-400">{status}</p>}
         </div>
 
-        <div className="rounded-[3rem] border border-white/10 bg-white/[0.04] p-10 backdrop-blur-2xl md:p-16">
+        <div className="glass-card glass-hover rounded-[3rem] p-10 backdrop-blur-2xl md:p-16">
           <p className="text-xs uppercase tracking-[0.5em] text-cyan-400">
-            Company Info
+            {isTR ? "Şirket Bilgileri" : "Company Info"}
           </p>
 
           <h3 className="mt-5 text-4xl font-black">2LLSOFT</h3>
@@ -125,16 +113,20 @@ export default function Contact() {
             <p>Phone: +48 507 275 668</p>
             <p>WhatsApp: +48 507 275 668</p>
             <p>Location: Słupsk, Poland</p>
-            <p>Working Hours: Mon - Fri / 09:00 - 18:00</p>
+            <p>
+              {isTR
+                ? "Çalışma Saatleri: Pazartesi - Cuma / 09:00 - 18:00"
+                : "Working Hours: Mon - Fri / 09:00 - 18:00"}
+            </p>
           </div>
 
-          <div className="glass-card glass-hover rounded-[2rem] p-8">
+          <div className="mt-10 rounded-[2rem] border border-white/10 bg-black/30 p-6">
             <p className="text-sm uppercase tracking-[0.3em] text-cyan-400">
-              Response Time
+              {isTR ? "Yanıt Süresi" : "Response Time"}
             </p>
 
             <p className="mt-4 text-2xl font-black">
-              Usually within 24 hours
+              {isTR ? "Genelde 24 saat içinde" : "Usually within 24 hours"}
             </p>
           </div>
         </div>
