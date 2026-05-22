@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-const stars = Array.from({ length: 18 });
+const stars = Array.from({ length: 12 });
 
 export default function SpaceBackground() {
   return (
@@ -68,7 +68,7 @@ export default function SpaceBackground() {
           opacity: [0, 1, 0],
         }}
         transition={{
-          duration: 2.6,
+          duration: 6.2,
           repeat: Infinity,
           repeatDelay: 8,
           delay: 2,
